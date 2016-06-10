@@ -1,0 +1,23 @@
+
+############ Yi Notes ############
+For UBUNTU:
+
+1) To install dependencies:
+sudo apt-get install libxss1 libappindicator1 libindicator7
+sudo apt-get install xvfb
+sudo pip install pyvirtualdisplay
+sudo pip install openpyxl
+sudo pip install xlwt
+sudo pip install xlrd
+sudo pip install xlutils
+
+2) To install Chrome:
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt-get install -f
+sudo dpkg -i google-chrome*.deb
+
+3) To install Chrom Driver:
+http://chromedriver.storage.googleapis.com/index.html?path=2.20/
+chmod +x ~/Downloads/chromedriver
+sudo mv -f ~/Downloads/chromedriver /usr/local/share/chromedriver
+
