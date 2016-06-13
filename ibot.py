@@ -6,14 +6,13 @@ from pyvirtualdisplay import Display
 
 
 
-def main(n):
+def main(n, root):
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
     from pyvirtualdisplay import Display
-    print "this is: " + str(n)
-    url_path = '/home/ubuntu/yi-ad-proj/urls.txt'
-    img_path = '/home/ubuntu/yi-ad-proj/img/'
-    src_path = '/home/ubuntu/yi-ad-proj/src/'
+    url_path = root + '/urls.txt'
+    img_path = root + '/img/'
+    src_path = root + '/src/'
     img_ext = '.png'
     src_ext = '.txt'
     timeout = 30 #30 secs for timeout
@@ -55,6 +54,22 @@ if __name__=="__main__":
         ppservers = ()
 	job_server = pp.Server(n_cores, ppservers=ppservers)
         print "Starting pp with", job_server.get_ncpus(), "workers"	
-	job1 = job_server.submit(main, (n_cores,))
-        job1()        
-	#main()
+	#job1 = job_server.submit(main, (n_cores,))
+        #job1()        
+	try:
+       		with open(root + 'urls.txt') as f:
+            		t_lines =  sum(1 for _ in f)
+    	except IOError:
+        	print "Error opening file: please check your path and permission."
+	n_lines = t_lines / n_cores
+        for i in range(n_cores+1):
+		lines[i] = n_lines * (i+1)
+	start_time = time.time()
+	#inputs = (100000, 100100, 100200, 100300, 100400, 100500, 100600, 100700)
+	jobs = [(line, job_server.submit(main,(line,root))) for line in lines]
+	for line, job in jobs:
+    		print "Job " + line + "..."
+		print job()
+
+	print "Time elapsed: ", time.time() - start_time, "s"
+	job_server.print_stats()
