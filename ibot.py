@@ -24,10 +24,13 @@ def main(n, root):
     driver.maximize_window()
     driver.set_page_load_timeout(timeout)
 
-    while True:
-        url = file.readline().strip()
-        if url == '':
+    for i, line in enumerate(file):
+    #while True:
+        #url = file.readline().strip()
+        if line == '' or i == n:
             break
+        if i < n:
+	    continue
         domain = url.split('.')[1]
 	print domain + "..."
         try:
