@@ -1,3 +1,7 @@
+###Welcome to ibot 
+###Version: v2.1
+###Author: Yi Ren Cheng
+
 import sys
 import pp
 import time
@@ -52,21 +56,26 @@ def main(n,l,root,display):
 
 if __name__=="__main__":
 	root = sys.argv[1]
-	n_cores = int(sys.argv[2])
+        n_cores = 8
+	try:
+       		with open(root + '/urls.txt') as f:
+            		t_lines =  sum(1 for _ in f)
+    	except IOError:
+        	print "Error opening file: please check your path and permission."
 
+	if len(sys.argv)>2:
+		n_cores = int(sys.argv[2])
+
+	if t_lines < n_cores:		
+		n_cores = t_lines
+ 
         display = Display(visible=0, size=(1024, 768))
         display.start()
 
         ppservers = ()
 	job_server = pp.Server(n_cores, ppservers=ppservers)
         print "Starting pp with", job_server.get_ncpus(), "workers"	
-	#job1 = job_server.submit(main, (n_cores,))
-        #job1()        
-	try:
-       		with open(root + '/urls.txt') as f:
-            		t_lines =  sum(1 for _ in f)
-    	except IOError:
-        	print "Error opening file: please check your path and permission."
+
 	n_lines = t_lines / n_cores
         lines = []
 	for i in range(n_cores+1):
