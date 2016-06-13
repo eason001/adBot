@@ -1,11 +1,16 @@
 import sys
+import pp
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from pyvirtualdisplay import Display
 
 
 
-def main():
+def main(n):
+    from selenium import webdriver
+    from selenium.common.exceptions import TimeoutException
+    from pyvirtualdisplay import Display
+    print "this is: " + str(n)
     url_path = '/home/ubuntu/yi-ad-proj/urls.txt'
     img_path = '/home/ubuntu/yi-ad-proj/img/'
     src_path = '/home/ubuntu/yi-ad-proj/src/'
@@ -45,4 +50,11 @@ def main():
     print "All jobs DONE~!"
 
 if __name__=="__main__":
-	main()
+	root = sys.argv[1]
+	n_cores = int(sys.argv[2])
+        ppservers = ()
+	job_server = pp.Server(n_cores, ppservers=ppservers)
+        print "Starting pp with", job_server.get_ncpus(), "workers"	
+	job1 = job_server.submit(main, (n_cores,))
+        job1()        
+	#main()
