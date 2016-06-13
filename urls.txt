@@ -3,3 +3,7 @@ http://www.facebook.com
 http://www.digitaslbi.com
 https://www.tensorflowsure.org
 https://www.tensorflow.org
+https://www.sourceforge.net
+http://www.stackoverflow.com
+http://www.tubidy-mp3.com
+https://www.twitter.com
