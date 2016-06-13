@@ -618,6 +618,26 @@
 	</header>
 	<div class="news__news-list row-inline">
 	
+        	<article class="news__item span"><a href="/us/news/us/fastest-dunkin-run/">
+				<h3 class="news__item-title">Not Your Usual Drive-Thru: World’s Fastest Flying Woman Grabs Dunkin’ Bag at 120 MPH in New DigitasLBi Campaign in Partnership with Dunkin’ Donuts</h3>
+				<time class="news__date">June 13, 2016</time>
+		        <p>FACTS 
+ – DigitasLBi and Dunkin’ recruited the world’s fastest flying woman —28-year-old wingsuit BASE jumper Ellen Brennan—to do the..</p></a>
+		        <a class="news__read-more" href="/us/news/us/fastest-dunkin-run/">
+                    More
+		        </a>
+            </article>
+        
+        	<article class="news__item span"><a href="/us/news/us/teladoc-wins-gold/">
+				<h3 class="news__item-title">DigitasLBi Wins Gold for Teladoc App at the One Show Awards</h3>
+				<time class="news__date">June 10, 2016</time>
+		        <p>FACTS 
+ - DigitasLBi was the recipient of a Gold Pencil for UX/UI in the Consumer Mobile Utility category, and a Merit Award for UX/UI in..</p></a>
+		        <a class="news__read-more" href="/us/news/us/teladoc-wins-gold/">
+                    More
+		        </a>
+            </article>
+        
         	<article class="news__item span"><a href="/us/news/us/digitaslbi-effie-wins/">
 				<h3 class="news__item-title">DigitasLBi Takes 2nd Consecutive Effie Gold</h3>
 				<time class="news__date">June 03, 2016</time>
@@ -647,27 +667,6 @@
  FACTS 
  – DigitasLBi’s Jason Kodish, Global Chief Data Scientist, Carlos Ricque, Executive Creative..</p></a>
 		        <a class="news__read-more" href="/us/news/us/digitaslbi-cannes-jurors/">
-                    More
-		        </a>
-            </article>
-        
-        	<article class="news__item span"><a href="/us/news/us/digitaslbi-webby-award/">
-				<h3 class="news__item-title">“To The Point” – Taco Bell Mobile Order App Wins Best in Category</h3>
-				<time class="news__date">April 26, 2016</time>
-		        <p>* The following message is Unicorn newsroom approved 
- New York, NY – April 26, 2016 
- Unicorn Fast Facts 
- --DigitasLBi is a 20 th..</p></a>
-		        <a class="news__read-more" href="/us/news/us/digitaslbi-webby-award/">
-                    More
-		        </a>
-            </article>
-        
-        	<article class="news__item span"><a href="/us/news/us/laurent-ezekiel-appointment/">
-				<h3 class="news__item-title">DigitasLBi’s Laurent Ezekiel Appointed Managing Director of the Agency’s 600+ New York Operation; Succeeds Joanne Zaiac who Elevates to Chief Operating Officer, North America</h3>
-				<time class="news__date">April 12, 2016</time>
-		        <p>Ezekiel to retain his Global Client Services role; Zaiac charged with ‘One Way, Every Day’ transformation strategy for the agency’s seven..</p></a>
-		        <a class="news__read-more" href="/us/news/us/laurent-ezekiel-appointment/">
                     More
 		        </a>
             </article>
@@ -761,4 +760,4 @@
 }
 </script><div style="font-size: 2px;" id="bottomAd"> </div>
 <script type="text/javascript" id="" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" id="">$(document).ready(function(){window.setTimeout(function(){var a=$("#bottomAd");1==a.length&amp;&amp;(0==a.height()?dataLayer.push({event:"adBlock",adBlockDetected:1}):dataLayer.push({event:"adBlock",adBlockDetected:0}))},1)});</script><div id="ads"></div></body><canvas id="fxdriver-screenshot-canvas" style="display: none;" width="752" height="2233"></canvas></html>
+<script type="text/javascript" id="">$(document).ready(function(){window.setTimeout(function(){var a=$("#bottomAd");1==a.length&amp;&amp;(0==a.height()?dataLayer.push({event:"adBlock",adBlockDetected:1}):dataLayer.push({event:"adBlock",adBlockDetected:0}))},1)});</script><div id="ads"></div></body><canvas id="fxdriver-screenshot-canvas" style="display: none;" width="752" height="2208"></canvas></html>

@@ -1,3 +1,5 @@
 http://www.google.com
 http://www.facebook.com
 http://www.digitaslbi.com
+https://www.tensorflowsure.org
+https://www.tensorflow.org
