@@ -15,8 +15,8 @@ def main(n,l,root,display):
     from selenium.common.exceptions import TimeoutException
     from pyvirtualdisplay import Display
     url_path = root + '/urls.txt'
-    img_path = root + '/img/'
-    src_path = root + '/src/'
+    img_path = root + '/data/img/'
+    src_path = root + '/data/src/'
     img_ext = '.png'
     src_ext = '.txt'
     file = open(url_path,'r')
@@ -28,6 +28,8 @@ def main(n,l,root,display):
     i=0
     while True:
         url = file.readline().strip()
+	url = 'http://' + url.split()[0] # url number
+	print url
         if url == '' or i == (l+1)*n:
             break
         if i < l*n:
@@ -48,7 +50,9 @@ def main(n,l,root,display):
 	except TimeoutException:
 		print "Ops, timeout occurred loading " + domain
 		continue
-
+	except:
+		print domain + " failed for unknown reason..."
+		continue
     file.close()
     driver.close()
 
