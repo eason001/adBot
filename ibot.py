@@ -31,7 +31,6 @@ def main(n,l,root,display):
     i=0
     while True:
         url = file.readline().strip()
-	url = 'http://' + url.split()[0] # url number
 	print url
         if url == '' or i == (l+1)*n:
             break
@@ -39,6 +38,7 @@ def main(n,l,root,display):
 	    i += 1
 	    continue
         i += 1
+	url = 'http://' + url.split()[0] # url number
         domain = url.split('.')[1]
 	print domain + "..."
         try:
@@ -81,10 +81,10 @@ def main_s(root):
     i=0
     while True:
         url = file.readline().strip()
-	url = 'http://' + url.split()[0] # url number
 	print url
         if url == '':
             break
+	url = 'http://' + url.split()[0] # url number
         domain = url.split('.')[1]
 	print domain + "..."
         try:
