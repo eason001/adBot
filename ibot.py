@@ -1,5 +1,5 @@
 ###Welcome to ibot 
-###Version: v2.1
+###Version: v2.2
 ###Author: Yi Ren Cheng
 
 import sys
@@ -9,7 +9,9 @@ import multiprocessing
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from pyvirtualdisplay import Display
-
+import tempfile
+import itertools as IT
+import os
 		
 def main(n,l,root,display):
     from selenium import webdriver
@@ -41,13 +43,15 @@ def main(n,l,root,display):
 	print domain + "..."
         try:
 		driver.get(url)
-        	driver.get_screenshot_as_file(img_path + domain + img_ext)
-		print img_path + domain + img_ext + " saved successfully!"
+		img_name = uniquify(img_path + domain + img_ext)
+		src_name = uniquify(src_path + domain + src_ext)
+        	driver.get_screenshot_as_file(img_name)
+		print img_name + " saved successfully!"
         	html_source = driver.page_source
-		f = open(src_path + domain + src_ext,'w')
+		f = open(src_name,'w')
 		f.write(html_source.encode('utf-8'))
 		f.close()
-		print src_path + domain + src_ext + " saved successfully!"
+		print src_name + " saved successfully!"
 	except TimeoutException:
 		print "Ops, timeout occurred loading " + domain
 		continue
@@ -85,13 +89,15 @@ def main_s(root):
 	print domain + "..."
         try:
 		driver.get(url)
-        	driver.get_screenshot_as_file(img_path + domain + img_ext)
-		print img_path + domain + img_ext + " saved successfully!"
+		img_name = uniquify(img_path + domain + img_ext)
+		src_name = uniquify(src_path + domain + src_ext)
+        	driver.get_screenshot_as_file(img_name)
+		print img_name + " saved successfully!"
         	html_source = driver.page_source
-		f = open(src_path + domain + src_ext,'w')
+		f = open(src_name,'w')
 		f.write(html_source.encode('utf-8'))
 		f.close()
-		print src_path + domain + src_ext + " saved successfully!"
+		print src_name + " saved successfully!"
 	except TimeoutException:
 		print "Ops, timeout occurred loading " + domain
 		continue
@@ -136,7 +142,21 @@ def main_m(root,n_cores):
 
 	display.stop()
 
-
+def uniquify(path, sep = ''):
+    def name_sequence():
+        count = IT.count()
+        yield ''
+        while True:
+            yield '{s}{n:d}'.format(s = sep, n = next(count))
+    orig = tempfile._name_sequence
+    with tempfile._once_lock:
+        tempfile._name_sequence = name_sequence()
+        path = os.path.normpath(path)
+        dirname, basename = os.path.split(path)
+        filename, ext = os.path.splitext(basename)
+        fd, filename = tempfile.mkstemp(dir = dirname, prefix = filename, suffix = ext)
+        tempfile._name_sequence = orig
+    return filename
 
 if __name__=="__main__":
 	root = sys.argv[1]
