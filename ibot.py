@@ -6,6 +6,7 @@ import sys
 import pp
 import time
 import multiprocessing
+import logging
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from pyvirtualdisplay import Display
@@ -41,27 +42,34 @@ def main(n,l,root,display):
         domain = url.split('.')[1]
 	print "from " + domain + " ->"
 	print "processing... " + url
+	logging.info("from " + domain + " ->")
+	logging.info("processing... " + url)
         try:
 		driver.get(url)
 		img_name = uniquify(img_path + domain + img_ext)
 		src_name = uniquify(src_path + domain + src_ext)
         	driver.get_screenshot_as_file(img_name)
 		print img_name + " saved successfully!"
+		logging.info(img_name + " saved successfully!")
         	html_source = driver.page_source
 		f = open(src_name,'w')
 		f.write(html_source.encode('utf-8'))
 		f.close()
 		print src_name + " saved successfully!"
+		logging.info(src_name + " saved successfully!")
 	except TimeoutException:
 		print "Ops, timeout occurred loading " + domain
+		logging.info("Ops, timeout occurred loading " + domain)
 		continue
-	except:
-		print domain + " failed for unknown reason..."
+	except Exception,e:
+		print domain + " failed: " + e
+		logging.info(domain + " failed: " + e)
 		continue
     file.close()
     driver.close()
 
     print "All jobs DONE~!"
+    logging.info("All jobs DONE~!")
 
 
 def main_s(root):
@@ -82,32 +90,42 @@ def main_s(root):
     while True:
         url = file.readline().strip()
 	print url
+	logging.info(url)
         if url == '':
             break
 	url = 'http://' + url.split()[0] # url number
         domain = url.split('.')[1]
 	print domain + "..."
-        try:
+        logging.info(domain + "...")
+	try:
 		driver.get(url)
 		img_name = uniquify(img_path + domain + img_ext)
 		src_name = uniquify(src_path + domain + src_ext)
         	driver.get_screenshot_as_file(img_name)
 		print img_name + " saved successfully!"
+		logging.info(img_name + " saved successfully!")
         	html_source = driver.page_source
 		f = open(src_name,'w')
 		f.write(html_source.encode('utf-8'))
 		f.close()
 		print src_name + " saved successfully!"
+		logging.info(src_name + " saved successfully!")
 	except TimeoutException:
 		print "Ops, timeout occurred loading " + domain
+		logging.info("Ops, timeout occurred loading " + domain)
 		continue
-	except:
-		print domain + " failed for unknown reason..."
+#	except:
+#		print domain + " failed for unknown reason..."
+#		continue
+	except Exception, e:
+    		print 'Failed: '+ str(e)
+    		logging.info('Failed: '+ str(e))
 		continue
     file.close()
     driver.close()
     display.stop()
     print "All jobs DONE~!"
+    logging.info("All jobs DONE~!")
 
 def main_m(root,n_cores):
 
@@ -116,6 +134,7 @@ def main_m(root,n_cores):
             		t_lines =  sum(1 for _ in f)
     	except IOError:
         	print "Error opening file: please check your path and permission."
+        	logging.info("Error opening file: please check your path and permission.")
 
 	if t_lines < n_cores:		
 		n_cores = t_lines
@@ -126,6 +145,7 @@ def main_m(root,n_cores):
         ppservers = ()
 	job_server = pp.Server(n_cores, ppservers=ppservers)
         print "Starting pp with", job_server.get_ncpus(), "workers"	
+        logging.info("Starting pp with", job_server.get_ncpus(), "workers")	
 
 	n_lines = t_lines / (n_cores-1)
         lines = []
@@ -136,6 +156,8 @@ def main_m(root,n_cores):
 	for line, job in jobs:
     		print "Job " + str(line) + "..."
 		print job()
+    		logging.info("Job " + str(line) + "...")
+		logging.info(job())
 
 	print "Time elapsed: ", time.time() - start_time, "s"
 	job_server.print_stats()
@@ -163,6 +185,7 @@ def uniquify(path, sep = ''):
     return filename
 
 if __name__=="__main__":
+	logging.basicConfig(filename='/mnt/yi-ad-proj/debug.log',level=logging.INFO)
 	root = sys.argv[1]
 	mode = 0
         n_cores = multiprocessing.cpu_count()
