@@ -16,7 +16,6 @@ import os
 def main(n,l,root,display):
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
-    from pyvirtualdisplay import Display
     url_path = root + '/urls.txt'
     img_path = root + '/data/img/'
     src_path = root + '/data/src/'
@@ -31,7 +30,7 @@ def main(n,l,root,display):
     i=0
     while True:
         url = file.readline().strip()
-	print url
+	#print url
         if url == '' or i == (l+1)*n:
             break
         if i < l*n:
@@ -40,7 +39,8 @@ def main(n,l,root,display):
         i += 1
 	url = 'http://' + url.split()[0] # url number
         domain = url.split('.')[1]
-	print domain + "..."
+	print "from " + domain + " ->"
+	print "processing... " + url
         try:
 		driver.get(url)
 		img_name = uniquify(img_path + domain + img_ext)
@@ -132,7 +132,7 @@ def main_m(root,n_cores):
 	for i in range(n_cores):
 		lines.append(i)
 	start_time = time.time()
-	jobs = [(line, job_server.submit(main,(n_lines,line,root,display))) for line in lines]
+	jobs = [(line, job_server.submit(main,(n_lines,line,root,display),(uniquify,))) for line in lines]
 	for line, job in jobs:
     		print "Job " + str(line) + "..."
 		print job()
@@ -143,6 +143,10 @@ def main_m(root,n_cores):
 	display.stop()
 
 def uniquify(path, sep = ''):
+    import tempfile
+    import itertools as IT
+    import os
+
     def name_sequence():
         count = IT.count()
         yield ''
