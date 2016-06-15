@@ -5,6 +5,7 @@
 import sys
 import pp
 import time
+import multiprocessing
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
 from pyvirtualdisplay import Display
@@ -60,7 +61,7 @@ def main(n,l,root,display):
 
 if __name__=="__main__":
 	root = sys.argv[1]
-        n_cores = 8
+        n_cores = multiprocessing.cpu_count()
 	try:
        		with open(root + '/urls.txt') as f:
             		t_lines =  sum(1 for _ in f)
@@ -69,6 +70,9 @@ if __name__=="__main__":
 
 	if len(sys.argv)>2:
 		n_cores = int(sys.argv[2])
+
+	if n_cores > multiprocessing.cpu_count():
+		n_cores = multiprocessing.cpu_count()
 
 	if t_lines < n_cores:		
 		n_cores = t_lines
@@ -80,9 +84,9 @@ if __name__=="__main__":
 	job_server = pp.Server(n_cores, ppservers=ppservers)
         print "Starting pp with", job_server.get_ncpus(), "workers"	
 
-	n_lines = t_lines / n_cores
+	n_lines = t_lines / (n_cores-1)
         lines = []
-	for i in range(n_cores+1):
+	for i in range(n_cores):
 		lines.append(i)
 	start_time = time.time()
 	jobs = [(line, job_server.submit(main,(n_lines,line,root,display))) for line in lines]
