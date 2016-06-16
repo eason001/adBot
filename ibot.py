@@ -146,7 +146,7 @@ def main_m(root,n_cores):
         ppservers = ()
 	job_server = pp.Server(n_cores, ppservers=ppservers)
         print "Starting pp with", job_server.get_ncpus(), "workers"	
-        logging.info("Starting pp with", job_server.get_ncpus(), "workers")	
+        logging.info("Starting pp with", str(job_server.get_ncpus()), "workers")	
 
 	n_lines = t_lines / (n_cores-1)
         lines = []
