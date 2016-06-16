@@ -25,7 +25,8 @@ def main(n,l,root,display):
     src_ext = '.txt'
     file = open(url_path,'r')
     timeout = 30 #30 secs for timeout
-    driver = webdriver.Firefox()
+#    driver = webdriver.Firefox()
+    driver = webdriver.PhantomJS()
     driver.maximize_window()
     driver.set_page_load_timeout(timeout)
 
