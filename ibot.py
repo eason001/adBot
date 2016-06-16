@@ -14,7 +14,7 @@ import tempfile
 import itertools as IT
 import os
 		
-def main(n,l,root,display):
+def main(n,l,root):
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
     import logging
@@ -141,8 +141,8 @@ def main_m(root,n_cores):
 	if t_lines < n_cores:		
 		n_cores = t_lines
  
-        display = Display(visible=0, size=(1024, 768))
-        display.start()
+#        display = Display(visible=0, size=(1024, 768))
+#        display.start()
 
         ppservers = ()
 	job_server = pp.Server(n_cores, ppservers=ppservers)
@@ -154,7 +154,7 @@ def main_m(root,n_cores):
 	for i in range(n_cores):
 		lines.append(i)
 	start_time = time.time()
-	jobs = [(line, job_server.submit(main,(n_lines,line,root,display),(uniquify,))) for line in lines]
+	jobs = [(line, job_server.submit(main,(n_lines,line,root),(uniquify,))) for line in lines]
 	for line, job in jobs:
     		print "Job " + str(line) + "..."
 		print job()
@@ -164,7 +164,7 @@ def main_m(root,n_cores):
 	print "Time elapsed: ", time.time() - start_time, "s"
 	job_server.print_stats()
 
-	display.stop()
+#	display.stop()
 
 def uniquify(path, sep = ''):
     import tempfile
