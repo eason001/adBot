@@ -18,7 +18,7 @@ def main(n,l,root,file_array):
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
     import logging
-    url_path = root + '/urls_test.txt'
+    url_path = root + '/urls.txt'
     img_path = root + '/data/img/'
     src_path = root + '/data/src/'
     img_ext = '.png'
@@ -124,7 +124,7 @@ def main_s(root):
 def main_m(root,n_cores):
 	file_array=[]
 	try:
-       		with open(root + '/urls_test.txt') as f:
+       		with open(root + '/urls.txt') as f:
 			for l in f:
         			file_array.append(l)
 		t_lines = len(file_array)
