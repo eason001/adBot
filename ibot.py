@@ -14,32 +14,27 @@ import tempfile
 import itertools as IT
 import os
 		
-def main(n,l,root):
+def main(n,l,root,file_array):
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
     import logging
-    url_path = root + '/urls.txt'
+    url_path = root + '/urls_test.txt'
     img_path = root + '/data/img/'
     src_path = root + '/data/src/'
     img_ext = '.png'
     src_ext = '.txt'
     file = open(url_path,'r')
     timeout = 30 #30 secs for timeout
-#    driver = webdriver.Firefox()
     driver = webdriver.PhantomJS()
     driver.maximize_window()
     driver.set_page_load_timeout(timeout)
 
-    i=0
-    while True:
-        url = file.readline().strip()
-	#print url
-        if url == '' or i == (l+1)*n:
-            break
-        if i < l*n:
-	    i += 1
-	    continue
-        i += 1
+    start_pointer = l*n
+    end_pointer = (l+1)*n
+    if end_pointer > len(file_array):
+	end_pointer = len(file_array)
+    for i in range(start_pointer,end_pointer):
+	url = file_array[i]
 	url = 'http://' + url.split()[0] # url number
         domain = url.split('.')[1]
 	print "from " + domain + " ->"
@@ -116,9 +111,6 @@ def main_s(root):
 		print "Ops, timeout occurred loading " + domain
 		logging.info("Ops, timeout occurred loading " + domain)
 		continue
-#	except:
-#		print domain + " failed for unknown reason..."
-#		continue
 	except Exception, e:
     		print 'Failed: '+ str(e)
     		logging.info('Failed: '+ str(e))
@@ -130,10 +122,13 @@ def main_s(root):
     logging.info("All jobs DONE~!")
 
 def main_m(root,n_cores):
-
+	file_array=[]
 	try:
-       		with open(root + '/urls.txt') as f:
-            		t_lines =  sum(1 for _ in f)
+       		with open(root + '/urls_test.txt') as f:
+			for l in f:
+        			file_array.append(l)
+		t_lines = len(file_array)
+		print "len: ", len(file_array)
     	except IOError:
         	print "Error opening file: please check your path and permission."
         	logging.info("Error opening file: please check your path and permission.")
@@ -141,9 +136,6 @@ def main_m(root,n_cores):
 	if t_lines < n_cores:		
 		n_cores = t_lines
  
-#        display = Display(visible=0, size=(1024, 768))
-#        display.start()
-
         ppservers = ()
 	job_server = pp.Server(n_cores, ppservers=ppservers)
         print "Starting pp with", job_server.get_ncpus(), "workers"	
@@ -154,7 +146,7 @@ def main_m(root,n_cores):
 	for i in range(n_cores):
 		lines.append(i)
 	start_time = time.time()
-	jobs = [(line, job_server.submit(main,(n_lines,line,root),(uniquify,))) for line in lines]
+	jobs = [(line, job_server.submit(main,(n_lines,line,root,file_array),(uniquify,))) for line in lines]
 	for line, job in jobs:
     		print "Job " + str(line) + "..."
 		print job()
@@ -163,8 +155,6 @@ def main_m(root,n_cores):
 
 	print "Time elapsed: ", time.time() - start_time, "s"
 	job_server.print_stats()
-
-#	display.stop()
 
 def uniquify(path, sep = ''):
     import tempfile
