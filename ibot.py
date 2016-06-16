@@ -17,6 +17,7 @@ import os
 def main(n,l,root,display):
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
+    import logging
     url_path = root + '/urls.txt'
     img_path = root + '/data/img/'
     src_path = root + '/data/src/'
@@ -62,8 +63,8 @@ def main(n,l,root,display):
 		logging.info("Ops, timeout occurred loading " + domain)
 		continue
 	except Exception,e:
-		print domain + " failed: " + e
-		logging.info(domain + " failed: " + e)
+		print domain + " failed: " + str(e)
+		logging.info(domain + " failed: " + str(e))
 		continue
     file.close()
     driver.close()
