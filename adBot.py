@@ -1,5 +1,5 @@
-###Welcome to ibot 
-###Version: v2.2
+###Welcome to adBot 
+###Version: v 1.3.1
 ###Author: Yi Ren Cheng
 
 import sys
@@ -13,7 +13,7 @@ import tempfile
 import itertools as IT
 import os
 		
-def main(n,l,root,file_array):
+def scrape(n,l,root,file_array,timeout):
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
     import logging
@@ -23,7 +23,6 @@ def main(n,l,root,file_array):
     img_ext = '.png'
     src_ext = '.txt'
     file = open(url_path,'r')
-    timeout = 30 #30 secs for timeout
     driver = webdriver.PhantomJS()
     driver.maximize_window()
     driver.set_page_load_timeout(timeout)
@@ -68,14 +67,13 @@ def main(n,l,root,file_array):
     logging.info("All jobs DONE~!")
 
 
-def main_s(root):
+def scrape_s(root,timeout):
     url_path = './urls.txt'
     img_path = root + '/data/img/'
     src_path = root + '/data/src/'
     img_ext = '.png'
     src_ext = '.txt'
     file = open(url_path,'r')
-    timeout = 30 #30 secs for timeout
     driver = webdriver.PhantomJS()
     driver.set_page_load_timeout(timeout)
 
@@ -115,7 +113,7 @@ def main_s(root):
     print "All jobs DONE~!"
     logging.info("All jobs DONE~!")
 
-def main_m(root,n_cores):
+def scrape_m(root,n_cores,timeout):
 	file_array=[]
 	try:
        		with open('./urls.txt') as f:
@@ -140,7 +138,7 @@ def main_m(root,n_cores):
 	for i in range(n_cores):
 		lines.append(i)
 	start_time = time.time()
-	jobs = [(line, job_server.submit(main,(n_lines,line,root,file_array),(uniquify,))) for line in lines]
+	jobs = [(line, job_server.submit(scrape,(n_lines,line,root,file_array,timeout),(uniquify,))) for line in lines]
 	for line, job in jobs:
     		print "Job " + str(line) + "..."
 		print job()
@@ -170,24 +168,65 @@ def uniquify(path, sep = ''):
         tempfile._name_sequence = orig
     return filename
 
-if __name__=="__main__":
-	logging.basicConfig(filename='./debug.log',level=logging.INFO)
-	root = sys.argv[1]
+def Choose(x):
+    unused_var = os.system("clear")
+    if x == '1':
+	root = raw_input("enter an output path: ")	
+	n_cores = raw_input("enter the number of jobs: ")	
+	timeout = raw_input("timeout in sec: ")
+	mode = 0
+
+	if root == '':
+		root = "."
+	if n_cores != '':
+		n_cores = int(n_cores)
+	else:
+		n_cores = 1
+	if  timeout != '':
+		timeout = int(timeout)
+	else:
+		timeout = 30 
+
 	if not os.path.exists(root + "/data"):
     		os.makedirs(root+"/data/img")
     		os.makedirs(root+"/data/src")
-	mode = 0
-        n_cores = multiprocessing.cpu_count()
 
-	if len(sys.argv)>2:
+	if n_cores>1:
 		mode = 1
-		n_cores = int(sys.argv[2])
 		
 	if n_cores > multiprocessing.cpu_count():
 		n_cores = multiprocessing.cpu_count()
 
 	if  mode == 0:
-		main_s(root)
+		scrape_s(root,timeout)
 	else:
-		main_m(root,n_cores)
+		scrape_m(root,n_cores,timeout)
+     
+    elif x == '2':
+	while True:
+		print 'Cleaning data'
+		print '0 - Back to main menu'
+		user_input = raw_input("Choose option: ")
+		if user_input == '0' or user_input == '':
+			unused_var = os.system("clear")
+			main()	
+    elif x == '0':
+	sys.exit()
+
+def main():
+	while True:
+#		unused_var = os.system("clear")
+		print "Welcome to adBot v 1.3.1"
+		print "please choose one of the follow options:"
+		print "1 - Scraing data (input file: ./urls.txt)"
+		print "2 - Cleaning data"
+		print "0 - Exit"
+		user_input = raw_input("Choose option: ")	
+		Choose(user_input)
+
+if __name__=="__main__":
+
+	logging.basicConfig(filename='./debug.log',level=logging.INFO)
+	main()
+
 
