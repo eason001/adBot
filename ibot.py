@@ -5,11 +5,10 @@
 import sys
 import pp
 import time
-import multiprocessing
 import logging
+import multiprocessing
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException
-from pyvirtualdisplay import Display
 import tempfile
 import itertools as IT
 import os
@@ -18,7 +17,7 @@ def main(n,l,root,file_array):
     from selenium import webdriver
     from selenium.common.exceptions import TimeoutException
     import logging
-    url_path = root + '/urls.txt'
+    url_path = './urls.txt'
     img_path = root + '/data/img/'
     src_path = root + '/data/src/'
     img_ext = '.png'
@@ -70,20 +69,16 @@ def main(n,l,root,file_array):
 
 
 def main_s(root):
-    url_path = root + '/urls.txt'
+    url_path = './urls.txt'
     img_path = root + '/data/img/'
     src_path = root + '/data/src/'
     img_ext = '.png'
     src_ext = '.txt'
     file = open(url_path,'r')
     timeout = 30 #30 secs for timeout
-    display = Display(visible=0, size=(1024, 768))
-    display.start()
-    driver = webdriver.Firefox()
-    driver.maximize_window()
+    driver = webdriver.PhantomJS()
     driver.set_page_load_timeout(timeout)
 
-    i=0
     while True:
         url = file.readline().strip()
 	print url
@@ -117,14 +112,13 @@ def main_s(root):
 		continue
     file.close()
     driver.close()
-    display.stop()
     print "All jobs DONE~!"
     logging.info("All jobs DONE~!")
 
 def main_m(root,n_cores):
 	file_array=[]
 	try:
-       		with open(root + '/urls.txt') as f:
+       		with open('./urls.txt') as f:
 			for l in f:
         			file_array.append(l)
 		t_lines = len(file_array)
@@ -177,8 +171,11 @@ def uniquify(path, sep = ''):
     return filename
 
 if __name__=="__main__":
-	logging.basicConfig(filename='/mnt/yi-ad-proj/debug.log',level=logging.INFO)
+	logging.basicConfig(filename='./debug.log',level=logging.INFO)
 	root = sys.argv[1]
+	if not os.path.exists(root + "/data"):
+    		os.makedirs(root+"/data/img")
+    		os.makedirs(root+"/data/src")
 	mode = 0
         n_cores = multiprocessing.cpu_count()
 
