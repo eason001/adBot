@@ -1,5 +1,5 @@
 ###Welcome to adBot 
-###Version: v 1.3.2
+###Version: v 1.3.3
 ###Author: Yi Ren Cheng
 
 import sys
@@ -154,7 +154,8 @@ def Choose(x):
 		n_cores = multiprocessing.cpu_count()
 
 	scrape_m(root,n_cores,timeout)
-     
+        main()
+
     elif x == '2':
 	while True:
 		print 'Cleaning data'
@@ -163,6 +164,31 @@ def Choose(x):
 		if user_input == '0' or user_input == '':
 			unused_var = os.system("clear")
 			main()	
+    elif x == 'a':
+	print "Transfering data with AWS S3 (USE ABSOLUTE PATH)"
+	print "i.e. s3://digitas-admin/home/<user_name>/ <--> /home/ubuntu/<dir_path>"
+	from_path = raw_input("from: ")
+	to_path = raw_input("to: ")	
+
+	if from_path == '':
+		from_path = "s3://digitas-admin/home/yi.cheng/raw_data/"
+	elif from_path.split()[0] == 's3':
+		from_path = "s3://digitas-admin/home/yi.cheng/" + from_path.split()[1]
+	elif from_path.split()[0] == '.':
+		from_path = os.getcwd() + "/" + from_path.split()[1]
+
+	if to_path == '':
+		to_path = os.getcwd() + "/"
+	elif to_path.split()[0] == 's3':
+		to_path = "s3://digitas-admin/home/yi.cheng/" + to_path.split()[1]
+	elif to_path.split()[0] == '.':
+		to_path = os.getcwd() + "/" + to_path.split()[1]
+
+	try:
+		os.system("aws s3 cp " + from_path + " " + to_path + " --recursive --sse")
+	except Exception,e:
+		print "failed: " + str(e)
+
     elif x == '0':
 	sys.exit()
 
@@ -173,6 +199,7 @@ def main():
 		print "please choose one of the follow options:"
 		print "1 - Scraing data (input file: ./urls.txt)"
 		print "2 - Cleaning data"
+		print "a - Transfering data with AWS S3"
 		print "0 - Exit"
 		user_input = raw_input("Choose option: ")	
 		Choose(user_input)
