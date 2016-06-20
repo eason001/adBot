@@ -1,4 +1,4 @@
-adBot v 2.3.0
+adBot v 1.3.2
 
 Input: a list of urls 
     Each url should follow the format xxx.domain.xxx in order to be parsed correctly by the ibot.py script. The input file name should be urls.txt.
