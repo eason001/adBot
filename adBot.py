@@ -1,5 +1,5 @@
 ###Welcome to adBot 
-###Version: v 1.3.3
+###Version: v 1.3.4
 ###Author: Yi Ren Cheng
 
 import sys
@@ -159,11 +159,52 @@ def Choose(x):
     elif x == '2':
 	while True:
 		print 'Cleaning data'
+		print '1 - Remove garbage data'
 		print '0 - Back to main menu'
 		user_input = raw_input("Choose option: ")
 		if user_input == '0' or user_input == '':
 			unused_var = os.system("clear")
 			main()	
+		elif user_input == '1':
+			cln_path = raw_input("Enter a data path to clean: ")
+			img_dir = cln_path + "/img/"
+			src_dir = cln_path + "/src/"
+			countI = 0
+			countS = 0
+			rm_flag = "N"
+
+			try:
+        			for file in os.listdir(img_dir):
+                			if file.endswith(".png") and int(os.stat(img_dir + file).st_size) <= 21565:
+                        			countI += 1
+				rm_flag = raw_input(str(countI) + " garbage data found, do you want remove all of them (Y/N): ")
+			except OSError:
+				pass
+		
+			countI = 0			
+			if rm_flag == 'Y' or rm_flag == 'Yes' or rm_flag == 'y' or rm_flag == 'yes':
+				try:
+        				for file in os.listdir(img_dir):
+                				if file.endswith(".png") and int(os.stat(img_dir + file).st_size) <= 21565:
+                        				countI += 1
+                        				for fileS in os.listdir(src_dir):
+                                				if fileS.endswith(".txt") and fileS.split(".")[0] == file.split(".")[0]:
+                                        				countS += 1
+                                        				os.remove(src_dir + fileS)
+                        				os.remove(img_dir + file)
+					print "number of garbage img files removed: " + str(countI)
+					print "number of garbage src files removed: " + str(countS)			
+				except OSError:
+        				pass
+			else:
+				unused_var = os.system("clear")
+				Choose(2)
+				
+		else:
+			unused_var = os.system("clear")
+			Choose(2)
+
+
     elif x == 'a':
 	print "Transfering data with AWS S3 (USE ABSOLUTE PATH)"
 	print "i.e. s3://digitas-admin/home/<user_name>/ <--> /home/ubuntu/<dir_path>"
@@ -171,7 +212,7 @@ def Choose(x):
 	to_path = raw_input("to: ")	
 
 	if from_path == '':
-		from_path = "s3://digitas-admin/home/yi.cheng/raw_data/"
+		from_path = "s3://digitas-admin/home/yi.cheng/"
 	elif from_path.split()[0] == 's3':
 		from_path = "s3://digitas-admin/home/yi.cheng/" + from_path.split()[1]
 	elif from_path.split()[0] == '.':
@@ -191,10 +232,12 @@ def Choose(x):
 
     elif x == '0':
 	sys.exit()
+    else:
+	unused_var = os.system("clear")
+	main()
 
 def main():
 	while True:
-#		unused_var = os.system("clear")
 		print "Welcome to adBot v 1.3.1"
 		print "please choose one of the follow options:"
 		print "1 - Scraing data (input file: ./urls.txt)"
