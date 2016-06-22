@@ -308,7 +308,7 @@ def main():
 		print "please choose one of the follow options:"
 		print "1 - Scraing data (input file: ./urls.txt)"
 		print "2 - Cleaning data"
-		print "3 - Compressing image"
+		print "3 - 3C Steps (Cutting -> Compressing -> Converting)"
 		print "a - Transfering data with AWS S3"
 		print "0 - Exit"
 		user_input = raw_input("Choose option: ")	
