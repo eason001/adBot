@@ -1,0 +1,586 @@
+<!DOCTYPE html><html lang="en" xmlns:fb="http://ogp.me/ns/fb#"><head profile="http://www.w3.org/2005/10/profile">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=Yes">
+    <link rel="icon" type="image/png" href="http:/images/redesign/general/favicon.png">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    <title>State Abbreviations</title>
+    <meta http-equiv="pics-label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true for &quot;http://www.50states.com/&quot; r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true for &quot;http://www.50states.com/&quot; r (n 0 s 0 v 0 l 0) &quot;http://www.icra.org/ratingsv02.html&quot; l gen true for &quot;http://www.50states.com/&quot; r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true for &quot;http://www.50states.com/&quot; r (n 0 s 0 v 0 l 0))">
+    <meta name="robots" content="all, index, follow">
+    <meta name="description" content="State Abbreviations for the US States and more.">
+    <meta name="keywords" content="state abbreviations, state abbreviation, states abbreviations">
+                <meta property="og:title" content="State Abbreviations">
+                <meta property="og:description" content="State Abbreviations for the US States and more.">
+                <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css?uiv=1.0.3"><link rel="stylesheet" type="text/css" href="/magnific-popup/css/magnific-popup.css?uiv=0.9.9"><link rel="stylesheet" type="text/css" href="/css/base.css?uiv=1.0.4"><link rel="stylesheet" type="text/css" href="/css/layout.css?uiv=1.0.6"><!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="/css/ie-base.css?uiv=1.0.0"></link><![endif]--><!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="/css/ie-layout.css?uiv=1.0.0"></link><![endif]--><!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="/css/ie6-layout.css?uiv=1.0.0"></link><![endif]--><link rel="stylesheet" type="text/css" href="/css/redesign/custom-layout.css?uiv=1.0.12"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="9e8a4d2a-6f8c-415e-851b-bdfe4c01d5c1/service" src="//sumome-140a.kxcdn.com/virtual/e56ce40944ba273e8268c5a5dbba836d1b043cfc/client/js/9e8a4d2a-6f8c-415e-851b-bdfe4c01d5c1/service.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="8dc42610-ae42-4164-90b1-573478b46574/service" src="//sumome-140a.kxcdn.com/virtual/6a924c4ff610443ce6be1d54ed05bb48313daa15/client/js/8dc42610-ae42-4164-90b1-573478b46574/service.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="4802de2d-b003-4fc4-8d07-901abb51e683/service" src="//sumome-140a.kxcdn.com/virtual/db12ae55a5b0c96476542948a1a6c870d7d62518/client/js/4802de2d-b003-4fc4-8d07-901abb51e683/service.js"></script><base href="http://www.50states.com/">
+<script src="//tags.crwdcntrl.net/c/4575/cc_af.js" async=""></script><script src="http://pagead2.googlesyndication.com/pagead/osd.js"></script><script src="http://b.scorecardresearch.com/beacon.js?c1=8&amp;c2=18203330&amp;c3=1" async=""></script><script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script><script async="" type="text/javascript" src="http://www.googletagservices.com/tag/js/gpt.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="//cdn.engine.4dsply.com/Scripts/infinity.js.aspx?guid=085b70ab-c051-4f77-a470-565aa6044a48" id="infinity" data-guid="085b70ab-c051-4f77-a470-565aa6044a48" data-version="async"></script><script async="" src="http://b.scorecardresearch.com/beacon.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-NSKZBV"></script><script>
+    var gaParam = new Object();
+    gaParam.userId = '3B27D762-9DDD-4B46-DDDE-E783B713ACF9';
+    gaParam.customDimension1 = '3B27D762-9DDD-4B46-DDDE-E783B713ACF9';
+    gaParam.customDimension2 = 'Ashburn';
+    gaParam.customDimension3 = 'Other';
+    gaParam.customDimension4 = 'Other';
+    gaParam.customDimension5 = 'Other';
+    gaParam.customDimension6 = 'Non EDU';
+    gaParam.customDimension7 = 'Other';
+
+    gaParam.productId = '';
+    gaParam.productName = '';
+    gaParam.productCat = 'Quinstreet Listing';
+    gaParam.productBrand = 'Quinstreet';
+
+    gaParam.bottomLines = false;
+
+    </script>
+     <script type="text/javascript"> function getQueryStringVariable(variable) { var query = window.location.search.substring(1); var vars = query.split('&'); for (var i=0;i<vars.length;i++) {var pair = vars[i].split('=');if (pair[0] == variable) {return pair[1];}}} ni_ad_client = "602540"; ni_res_id = 2; ni_alt_url = "https://www.shmktpl.com/search.asp";ni_zc =  getQueryStringVariable('zipcode'); ni_str_state_code = "getQueryStringVariable('statecode')"; ni_var1 = "sa|Na|nA|Nc"; ni_display_layoutTemplate = 9; ni_ad_showcounter = false; ni_show_telephone = false; ni_color_border = "fff"; ni_height_hr = "1px"; ni_color_bghover = "fff"; ni_color_borderhover = "fff"; ni_suppress_centergobutton = true; ni_color_title = "blue"; ni_color_titlehover = "blue"; ni_adlogo_width = 135; ni_display_width = "600"; ni_custom_gobutton = { "imgFile": "SHGgl_squarearrow.png", "imgFileRollover": "", "imgSize": "37", "imgTxt": "Get A Quote Now!" }; ni_color_hr = "fff"; ni_comments_count = 2; ni_max_display = 1; ni_custom_css = "#listingHeading{display:none;}.shad .shTp9 table{width:100%}.shad .shTp9 .shadTitle{font-size:12px;font-weight:normal}.shad .shTp9 .listingLogoWrapper{margin:0;}.shad .shTp9 .listingLogo{padding:0;float:none;}.shad .shTp9 .cstmBtn{float:none;padding:0;}.shad .shTp9 .listDetailWrapper{float:none}#SHlistings #listingResults .shad .listingTableAlt .shTp9{background-color:#e2e2e2}.shad .shTp9 div.listingDescriptionBody{font-size:11px;}#SHlistings .shad .shTp9 div.listingDescriptionBody ul{list-style-position:outside;margin:0 0 0 10px}#SHlistings #listingResults .listingHR{margin:7px 0}";</script>         <script src="/js/jquery-1.11.1.min.js"></script>
+    
+<script src="http://partner.googleadservices.com/gpt/pubads_impl_89.js" async=""></script><script type="text/javascript" src="//engine.4dsply.com/Tag.engine?time=0&amp;id=085b70ab-c051-4f77-a470-565aa6044a48&amp;rand=74263&amp;ver=async&amp;referrerUrl=&amp;fingerPrint=123&amp;abr=false&amp;stdTime=0&amp;fpe=0&amp;bw=1366&amp;bh=768"></script><script type="text/javascript" src="//ad.crwdcntrl.net/5/c=3722/pe=y?http%3A%2F%2Fengine.4dsply.com%2Fleapi.engine%3FaudienceIds%3D%24%7Baud_ids%7D&amp;98543881"></script></head>
+<body class="ar-body" style=""><iframe src="//ads.pubmatic.com/AdServer/js/user_sync.html?predirect=%2F%2Fengine.4dsply.com%2Fpmmp.engine%3FUserId%3Dce23edee-5197-4994-b769-023dfcf87def%26PubmaticUserId%3D" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" scrolling="no" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;"></iframe>
+<!-- Google Tag Manager -->
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-NSKZBV"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NSKZBV');</script>
+<!-- End Google Tag Manager -->
+<div class="container ar-container">
+        <div class="ar-red-header-fade">
+            <div class="ar-body-content">
+                <div class="row ar-row-full-width">
+                    <div class="col-xs-3 ar-column-full-width">
+                        <a class="displayBlock floatLeft" id="ar-header-logo" href="/" title="50states.com — Home" data-ga-event="Navigation,Header Nav,Logo">
+                            <img src="/images/redesign/header/50states_logo_wht.png" border="0" alt="50 States Logo">
+                        </a>
+                    </div> <!-- col-xs-3 -->
+                    <div class="col-xs-9 ar-padding-zero">
+                        <div class="row ar-row-full-width">
+                            <div class="col-xs-9 ar-column-full-width">
+                                <form class="navbar-form navbar-right ar-search-form" role="search" action="/results/" id="cse-search-box">
+                                    <div class="form-group has-feedback has-feedback-right">
+                                        <div class="icon-addon">
+                                            <input type="hidden" name="ie" value="UTF-8">
+                                            <input type="search" class="form-control ar-header-search-input" placeholder="Search" name="q">
+                                            <input type="hidden" value="search" name="sa">
+                                            <button class="btn form-control-feedback input-group-addon ar-header-search-button">
+                                                <img class="ar-header-search-icon" src="/images/redesign/header/icon_search.png">
+                                            </button>
+                                        </div> <!-- icon-addon -->
+                                    </div> <!-- form-group -->
+                                </form>
+                            </div> <!-- col-xs-9 -->
+                            <div class="col-xs-3 ar-column-full-width">
+                                <!--
+                                <a href="http://www.facebook.com/50StatesInformation" rel="tooltip" title= "Facebook" target="_blank"
+                                   style="target-new" class="ar-header-social-buttons ar-header-facebook-button"
+                                   data-ga-event="Navigation,Header Nav,Facebook"></a>
+                                <a href="http://www.twitter.com/50StatesInfo" rel="tooltip" title="Twitter" target="_blank"
+                                   style="target-new"  class="ar-header-social-buttons ar-header-twitter-button"
+                                   data-ga-event="Navigation,Header Nav,Twitter"></a>
+                                   -->
+                            </div> <!-- col-xs-3 -->
+                        </div> <!-- row -->
+                        <nav class="navbar ar-navbar-no-padding" role="navigation">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed btn-default ar-header-mobile-button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                                    </button>
+                                </div> <!-- navbar-header -->
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="row ar-row-full-width ar-header-row-options">
+                                    <div class="collapse navbar-collapse ar-padding-zero" id="bs-example-navbar-collapse-1">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="ar-divider-vertical"></li>
+                                            <li class="dropdown">
+                                                <a href="/" class="dropdown-toggle ar-header-menu-dropdown-text" data-ga-event="Navigation,Header Nav,State Facts">
+                                                    State Facts<!--span class="caret"></span-->
+                                                </a>
+                                                <ul class="dropdown-menu ar-header-dropdown" role="menu">
+                                                                                                    <li>
+                                                        <a href="/tree/" data-ga-event="Navigation,Header Nav,State Trees">
+                                                            State Trees                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/bird/" data-ga-event="Navigation,Header Nav,State Birds">
+                                                            State Birds                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/songs/" data-ga-event="Navigation,Header Nav,State Songs">
+                                                            State Songs                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/flag/" data-ga-event="Navigation,Header Nav,State Flags">
+                                                            State Flags                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/flower/" data-ga-event="Navigation,Header Nav,State Flowers">
+                                                            State Flowers                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/news/" data-ga-event="Navigation,Header Nav,State Newspapers">
+                                                            State Newspapers                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/quarter/" data-ga-event="Navigation,Header Nav,State Quarters">
+                                                            State Quarters                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/bio/" data-ga-event="Navigation,Header Nav,Famous People">
+                                                            Famous People                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/facts/" data-ga-event="Navigation,Header Nav,Fun Facts &amp; Trivia">
+                                                            Fun Facts &amp; Trivia                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/ce/" data-ga-event="Navigation,Header Nav,Current Events">
+                                                            Current Events                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/sports/" data-ga-event="Navigation,Header Nav,Sports Teams">
+                                                            Sports Teams                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/tax/" data-ga-event="Navigation,Header Nav,State Tax Forms">
+                                                            State Tax Forms                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/cityguides/" data-ga-event="Navigation,Header Nav,City Guides">
+                                                            City Guides                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/whitepages/" data-ga-event="Navigation,Header Nav,White Pages">
+                                                            White Pages                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/yellowpages/" data-ga-event="Navigation,Header Nav,Yellow Pages">
+                                                            Yellow Pages                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/areacodes/" data-ga-event="Navigation,Header Nav,Area codes">
+                                                            Area codes                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/zipcodes/" data-ga-event="Navigation,Header Nav,Zip Codes">
+                                                            Zip Codes                                                        </a>
+                                                    </li>
+                                                                                                                                                    </ul> <!-- dropdown-menu -->
+                                            </li> <!-- dropdown State Facts -->
+                                            <li class="ar-divider-vertical"></li>
+                                            <li class="dropdown">
+                                                <a href="/college/" class="dropdown-toggle ar-header-menu-dropdown-text" data-ga-event="Navigation,Header Nav,Colleges">
+                                                    Colleges<!--span class="caret"></span-->
+                                                </a>
+                                                <ul class="dropdown-menu ar-header-dropdown" role="menu">
+                                                                                                    <li>
+                                                        <a href="/college/" data-ga-event="Navigation,Header Nav,Colleges &amp; Universities">
+                                                            Colleges &amp; Universities                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/business-schools/" data-ga-event="Navigation,Header Nav,Business Schools">
+                                                            Business Schools                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/nursing-schools/" data-ga-event="Navigation,Header Nav,Nursing Schools">
+                                                            Nursing Schools                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/art-design-schools/" data-ga-event="Navigation,Header Nav,Art &amp; Design Schools">
+                                                            Art &amp; Design Schools                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/cc/" data-ga-event="Navigation,Header Nav,Community Colleges">
+                                                            Community Colleges                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/education-and-teaching-schools/" data-ga-event="Navigation,Header Nav,Education &amp; Teaching">
+                                                            Education &amp; Teaching                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/criminal-justice-schools/" data-ga-event="Navigation,Header Nav,Criminal Justice">
+                                                            Criminal Justice                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/healthcare-schools/" data-ga-event="Navigation,Header Nav,Healthcare">
+                                                            Healthcare                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/it-schools/" data-ga-event="Navigation,Header Nav,IT Schools">
+                                                            IT Schools                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/math-science-schools/" data-ga-event="Navigation,Header Nav,Science">
+                                                            Science                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/engineering-construction-schools/" data-ga-event="Navigation,Header Nav,Engineering">
+                                                            Engineering                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/hospitality-culinary-schools/" data-ga-event="Navigation,Header Nav,Hospitality">
+                                                            Hospitality                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/social-science-schools/" data-ga-event="Navigation,Header Nav,Social Science">
+                                                            Social Science                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/liberal-arts-humanities-schools/" data-ga-event="Navigation,Header Nav,Liberal Arts">
+                                                            Liberal Arts                                                        </a>
+                                                    </li>
+                                                                                                            <li class="divider"></li>
+                                                                                                                                                        <li>
+                                                        <a href="/vocational-schools/" data-ga-event="Navigation,Header Nav,Vocational">
+                                                            Vocational                                                        </a>
+                                                    </li>
+                                                                                                                                                </ul>
+                                        </li> <!-- dropdown Colleges -->
+                                        <li class="ar-divider-vertical"></li>
+                                        <li class="dropdown">
+                                            <a href="/us.htm" class="dropdown-toggle ar-header-menu-dropdown-text" data-ga-event="Navigation,Header Nav,Maps">
+                                                Maps<!--span class="caret"></span-->
+                                            </a>
+                                            <ul class="dropdown-menu ar-header-dropdown" role="menu">
+                                                                                            <li>
+                                                    <a href="/us.htm" data-ga-event="Navigation,Header Nav,United States Map">
+                                                        United States Map                                                    </a>
+                                                </li>
+                                                                                                    <li class="divider"></li>
+                                                                                                                                            <li>
+                                                    <a href="/cap.htm" data-ga-event="Navigation,Header Nav,US Capital Cities Map">
+                                                        US Capital Cities Map                                                    </a>
+                                                </li>
+                                                                                                    <li class="divider"></li>
+                                                                                                                                            <li>
+                                                    <a href="/maps/" data-ga-event="Navigation,Header Nav,Blank State Outline Maps">
+                                                        Blank State Outline Maps                                                    </a>
+                                                </li>
+                                                                                                                                        </ul> <!-- dropdown-menu -->
+                                        </li> <!-- dropdown Maps -->
+                                        <li class="ar-divider-vertical"></li>
+                                        <li class="active ar-header-menu-link">
+                                            <a class="ar-header-text" href="/tools/" data-ga-event="Navigation,Header Nav,Study Tools">
+                                                Study Tools
+                                            </a>
+                                        </li>
+                                        <li class="ar-divider-vertical"></li>
+                                        <li class="active ar-header-menu-link">
+                                            <a class="ar-header-text" href="/quizzes/" data-ga-event="Navigation,Header Nav,Quizzes">
+                                                Quizzes
+                                            </a>
+                                        </li>
+                                        <li class="ar-divider-vertical"></li>
+                                    </ul> <!-- nav -->
+                                </div><!-- navbar-collapse -->
+                            </div> <!-- row -->
+                        </div><!-- container-fluid -->
+                    </nav> <!-- navbar -->
+                </div> <!-- col-xs-9 -->
+            </div>  <!-- row ar-row-full-width" -->
+        </div> <!-- ar-body-content-->
+    </div> <!-- ar-red-header-fade -->
+    <div class="row ar-row-full-width">
+          <div class="ar-header-ad-row">        <div id="div-gpt-ad-top"><div id="google_ads_iframe_/6403/mchx.50states.com_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/6403/mchx.50states.com_0" title="3rd party ad content" name="google_ads_iframe_/6403/mchx.50states.com_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div><iframe id="google_ads_iframe_/6403/mchx.50states.com_0__hidden__" title="" name="google_ads_iframe_/6403/mchx.50states.com_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe></div>
+        </div> <!-- row  ar-row-full-width -->
+    </div> <!-- ar-header-ad-row-->
+    <div class="row ar-body-content ar-main-body-content"> <!-- everything between the header and the footer is a row? 2014-09-26 gpowell-->
+        <div id="content" class="clearAfter"><div class="floatLeft col610Left">
+    <h1 class="sprite emph title"><span class="displayBlock sprite emphLeftCap"></span>State Abbreviations</h1>
+    <div class="spaced clearAfter"><span class="shareThis floatRight">
+</span></div>
+    <p>United States postal abbreviations for states, military, commonwealths, and territories.</p>
+    <table border="0" width="100%" cellpadding="0" cellspacing="0" class="spaced stripedRows">
+        <tbody><tr><th>US State:</th><th>Abbreviation:</th></tr>
+        <tr><td><a href="/alabama.htm">Alabama</a></td><td>AL</td></tr>
+        <tr><td><a href="/alaska.htm">Alaska</a></td><td>AK</td></tr>
+        <tr><td><a href="/arizona.htm">Arizona</a></td><td>AZ</td></tr>
+        <tr><td><a href="/arkansas.htm">Arkansas</a></td><td>AR</td></tr>
+        <tr><td><a href="/californ.htm">California</a></td><td>CA</td></tr>
+        <tr><td><a href="/colorado.htm">Colorado</a></td><td>CO</td></tr>
+        <tr><td><a href="/connecti.htm">Connecticut</a></td><td>CT</td></tr>
+        <tr><td><a href="/delaware.htm">Delaware</a></td><td>DE</td></tr>
+        <tr><td><a href="/florida.htm">Florida</a></td><td>FL</td></tr>
+        <tr><td><a href="/georgia.htm">Georgia</a></td><td>GA</td></tr>
+        <tr><td><a href="/hawaii.htm">Hawaii</a></td><td>HI</td></tr>
+        <tr><td><a href="/idaho.htm">Idaho</a></td><td>ID</td></tr>
+        <tr><td><a href="/illinois.htm">Illinois</a></td><td>IL</td></tr>
+        <tr><td><a href="/indiana.htm">Indiana</a></td><td>IN</td></tr>
+        <tr><td><a href="/iowa.htm">Iowa</a></td><td>IA</td></tr>
+        <tr><td><a href="/kansas.htm">Kansas</a></td><td>KS</td></tr>
+        <tr><td><a href="/kentucky.htm">Kentucky</a></td><td>KY</td></tr>
+        <tr><td><a href="/louisian.htm">Louisiana</a></td><td>LA</td></tr>
+        <tr><td><a href="/maine.htm">Maine</a></td><td>ME</td></tr>
+        <tr><td><a href="/maryland.htm">Maryland</a></td><td>MD</td></tr>
+        <tr><td><a href="/massachu.htm">Massachusetts</a></td><td>MA</td></tr>
+        <tr><td><a href="/michigan.htm">Michigan</a></td><td>MI</td></tr>
+        <tr><td><a href="/minnesot.htm">Minnesota</a></td><td>MN</td></tr>
+        <tr><td><a href="/mississi.htm">Mississippi</a></td><td>MS</td></tr>
+        <tr><td><a href="/missouri.htm">Missouri</a></td><td>MO</td></tr>
+        <tr><td><a href="/montana.htm">Montana</a></td><td>MT</td></tr>
+        <tr><td><a href="/nebraska.htm">Nebraska</a></td><td>NE</td></tr>
+        <tr><td><a href="/nevada.htm">Nevada</a></td><td>NV</td></tr>
+        <tr><td><a href="/newhamps.htm">New Hampshire</a></td><td>NH</td></tr>
+        <tr><td><a href="/newjerse.htm">New Jersey</a></td><td>NJ</td></tr>
+        <tr><td><a href="/newmexic.htm">New Mexico</a></td><td>NM</td></tr>
+        <tr><td><a href="/newyork.htm">New York</a></td><td>NY</td></tr>
+        <tr><td><a href="/ncarolin.htm">North Carolina</a></td><td>NC</td></tr>
+        <tr><td><a href="/ndakota.htm">North Dakota</a></td><td>ND</td></tr>
+        <tr><td><a href="/ohio.htm">Ohio</a></td><td>OH</td></tr>
+        <tr><td><a href="/oklahoma.htm">Oklahoma</a></td><td>OK</td></tr>
+        <tr><td><a href="/oregon.htm">Oregon</a></td><td>OR</td></tr>
+        <tr><td><a href="/pennsylv.htm">Pennsylvania</a></td><td>PA</td></tr>
+        <tr><td><a href="/rdisland.htm">Rhode Island</a></td><td>RI</td></tr>
+        <tr><td><a href="/scarolin.htm">South Carolina</a></td><td>SC</td></tr>
+        <tr><td><a href="/sdakota.htm">South Dakota</a></td><td>SD</td></tr>
+        <tr><td><a href="/tennesse.htm">Tennessee</a></td><td>TN</td></tr>
+        <tr><td><a href="/texas.htm">Texas</a></td><td>TX</td></tr>
+        <tr><td><a href="/utah.htm">Utah</a></td><td>UT</td></tr>
+        <tr><td><a href="/vermont.htm">Vermont</a></td><td>VT</td></tr>
+        <tr><td><a href="/virginia.htm">Virginia</a></td><td>VA</td></tr>
+        <tr><td><a href="/washingt.htm">Washington</a></td><td>WA</td></tr>
+        <tr><td><a href="/wvirgini.htm">West Virginia</a></td><td>WV</td></tr>
+        <tr><td><a href="/wisconsi.htm">Wisconsin</a></td><td>WI</td></tr>
+        <tr><td><a href="/wyoming.htm">Wyoming</a></td><td>WY</td></tr>        
+        <tr><th>Commonwealth/Territory:</th><th>Abbreviation:</th></tr>        
+        <tr><td><a href="/samoa.htm">American Samoa</a></td><td>AS</td></tr>
+        <tr><td><a href="/dc.htm">District of Columbia</a></td><td>DC</td></tr>
+        <tr><td><a href="/micro.htm">Federated States of Micronesia</a></td><td>FM</td></tr>
+        <tr><td><a href="/guam.htm">Guam</a></td><td>GU</td></tr>
+        <tr><td>Marshall Islands</td><td>MH</td></tr>
+        <tr><td><a href="/mariana.htm">Northern Mariana Islands</a></td><td>MP</td></tr>
+        <tr><td>Palau</td><td>PW</td></tr>
+        <tr><td><a href="/puerto.htm">Puerto Rico</a></td><td>PR</td></tr>
+        <tr><td><a href="/vi.htm">Virgin Islands</a></td><td>VI</td></tr>        
+        <tr><th>Military "State":</th><th>Abbreviation:</th></tr>        
+        <tr><td>Armed Forces Africa</td><td>AE</td></tr>
+        <tr><td>Armed Forces Americas</td><td>AA</td></tr>
+        <tr><td>Armed Forces Canada</td><td>AE</td></tr>
+        <tr><td>Armed Forces Europe</td><td>AE</td></tr>
+        <tr><td>Armed Forces Middle East</td><td>AE</td></tr>
+        <tr><td>Armed Forces Pacific</td><td>AP</td></tr>
+    </tbody></table>
+</div>
+<div class="floatRight col300Right ar-verticals-right-adjust"><div id="div-gpt-ad-topright"><div id="google_ads_iframe_/6403/mchx.50states.com_1__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/6403/mchx.50states.com_1" title="3rd party ad content" name="google_ads_iframe_/6403/mchx.50states.com_1" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div></div><div style="margin-top: 10px"><div id="div-gpt-ad-bottomright"><div id="google_ads_iframe_/6403/mchx.50states.com_2__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/6403/mchx.50states.com_2" title="3rd party ad content" name="google_ads_iframe_/6403/mchx.50states.com_2" width="300" height="600" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div></div><fb:facepile href="http://www.50states.com/" width="300"></fb:facepile></div></div></div> <!-- content clearAfter -->
+</div> <!--everything between the header and the footer is a row? 2014-09-26 gpowell-->
+<div class="row ar-footer-ad-row">
+          <div id="div-gpt-ad-bottom"><div id="google_ads_iframe_/6403/mchx.50states.com_3__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/6403/mchx.50states.com_3" title="3rd party ad content" name="google_ads_iframe_/6403/mchx.50states.com_3" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+    </div> <!-- row ar-footer-ad-row -->
+    <div class="row ar-row-full-width ar-footer-links-box">
+    <div class="ar-body-content">
+      <div id="ar-full-footer" class="col-sm-10">
+          <div class="col-sm-5 ar-footer-links-text">
+          <ul>
+          <li><a href="http://www.areaconnect.com/" title="Areaconnect Yellow Pages" target="_blank" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,AreaConnect">Find on Areaconnect Yellow Pages</a></li>
+          <li><a href="/link.htm" title="Link to 50states.com!" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Link to 50States">Link to 50states.com</a></li>
+          <li><a href="/maps/" title="Maps" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Maps">Maps</a></li>
+          <li><a href="/tools/" title="Study Tools" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Study Tools">Study Tools</a></li>
+          </ul>
+          </div> <!-- col-sm-5 -->
+          <div class="col-sm-3 ar-footer-links-text">
+          <ul>
+          <li><a href="/quizzes/" title="Quizzes" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Quizzes">Quizzes</a></li>
+          <li><a href="/faq.htm" title="50states.com Frequently Asked Questions" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,FAQ">FAQ</a></li>
+          <li><a href="/sitemap.htm" title="Sitemap" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Sitemap">Sitemap</a></li>
+            <li><a href="/advertise/" title="Adverttise" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Advertise">Advertise with Us</a></li>
+          </ul>
+          </div> <!-- col-sm-3 -->
+          <div class="col-sm-4 ar-footer-links-text">
+          <ul>
+          <li><a href="/contact/" title="Contact Us" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Contact">Contact Us</a></li>
+          <li><a href="/privacy.htm" title="Privacy Statement" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Privacy">Privacy</a></li>
+          <li><a href="/terms.htm" title="Terms of Use" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Terms">Terms</a></li>
+          <li><a href="/disclaimer.htm" title="Disclaimer" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Disclaimer">Disclaimer</a></li>
+          </ul>
+          </div> <!-- col-sm-4 -->
+          </div> <!--col-sm-10-->
+          <div id="ar-mobile-footer" class="col-xs-10">
+      <div class="col-xs-5 ar-footer-links-text">
+          <ul>
+          <li><a href="http://www.areaconnect.com/" title="Areaconnect Yellow Pages" target="_blank" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,AreaConnect">Find on Areaconnect Yellow Pages</a></li>
+          <li><a href="/link.htm" title="Link to 50states.com!" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Link to 50States">Link to 50states.com</a></li>
+          <li><a href="/maps/" title="Maps" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Maps">Maps</a></li>
+          <li><a href="/tools/" title="Study Tools" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Study Tools">Study Tools</a></li>
+          <li><a href="/quizzes/" title="Quizzes" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Quizzes">Quizzes</a></li>
+          <li><a href="/faq.htm" title="50states.com Frequently Asked Questions" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,FAQ">FAQ</a></li>
+          </ul>
+      </div> <!-- col-xs-5 -->
+      <div class="col-xs-4 ar-footer-links-text">
+          <ul>
+          <li><a href="/sitemap.htm" title="Sitemap" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Sitemap">Sitemap</a></li>
+          <li><a href="/contact/" title="Contact Us" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Contact">Contact Us</a></li>
+          <li><a href="/privacy.htm" title="Privacy Statement" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Privacy">Privacy</a></li>
+          <li><a href="/terms.htm" title="Terms of Use" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Terms">Terms</a></li>
+          <li><a href="/disclaimer.htm" title="Disclaimer" class="ar-footer-links-text" data-ga-event="Navigation,Footer Nav,Disclaimer">Disclaimer</a></li>
+          </ul>
+      </div> <!-- col-xs-4 -->
+          </div> <!--col-xs-10 -->
+      <div class="col-xs-2 col-sm-2">
+          <!--
+         <a href="http://www.facebook.com/50StatesInformation" rel="tooltip" title="Facebook" target="_blank" style="target-new" class="ar-footer-social-buttons ar-footer-facebook-button" data-ga-event="Navigation,Footer Nav,Facebook"></a>
+         <a href="http://www.twitter.com/50StatesInfo" rel="tooltip" title="Twitter" target="_blank" style="target-new"  class="ar-footer-social-buttons ar-footer-twitter-button" data-ga-event="Navigation,Footer Nav,Twitter"></a>
+         -->
+      </div> <!-- col-xs-2  col-sm-2-->
+    </div> <!-- ar-body-content -->
+    </div> <!-- row ar-footer-links-box-->
+    <div class="row ar-row-full-width ar-footer-poweredby-box">
+        <div class="ar-footer-poweredby-text">
+           © 2016 Powered by Digital Properties, LLC
+<!--           <img class="ar-footer-poweredby-icon" src="/images/redesign/footer/dp_icon_footer.png" title="Digital Properties, LLC" alt="Digital Properties, LLC" />-->
+        </div> <!-- ar-footer-poweredby-text -->
+      </div> <!-- row ar-footer-poweredby-box -->
+    </div> <!-- col-xs-4 col-centered -->
+   <!-- container ar-container -->
+     
+
+
+
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js?uiv=1.0.3"></script><script type="text/javascript" src="/js/tracking/redshift.js?uiv=1.0.2"></script><script type="text/javascript">
+    (function($) {
+        $(document).ready(function() {
+	   $('script.lazy').each(function() {
+	      $(this).attr('src', $(this).attr('original-src'));
+	      $(this).removeClass('lazy');
+	   });
+            $('#shareTwitter, #shareFacebook').click(function() {
+                try { ga('send', 'event', 'Social Share', $(this).attr('data-share-type'), $(this).attr('data-share-url')); } catch(e) {};
+            });
+        });
+    })(jQuery); 
+</script><script type="text/javascript" src="/js/ga.js?uiv=1.0.2"></script>
+<script src="http://www.50states.com/magnific-popup/js/jquery.magnific-popup.js"></script>
+
+<script>
+(function($) {
+    $(function() {
+        // Send Google Analytics Event for elements with 'data-ga-event' attribute
+        // <a data-ga-event="Category,Action,Label (optional)"></a>
+        $("[data-ga-event]").click(function() {
+            var gaEvent = $(this).attr("data-ga-event").split(",");
+            ga('send', 'event', gaEvent[0], gaEvent[1], gaEvent[2]);
+        });
+    });
+})(jQuery);
+</script>
+
+<!-- Begin BlueKai Tag -->
+<iframe name="__bkframe" height="0" width="0" frameborder="0" src="javascript:void(0)"></iframe>
+<!--<script type="text/javascript" class="lazy" src="http://www.bkrtx.com/js/bk-static.js"></script>-->
+<script type="text/javascript" class="" src="http://www.50states.com/js/bk-static.js"></script>
+<script type="text/javascript">
+    /*  Magnetic Integration
+     And BlueKai Integration
+     Use the meta keywords as Magnetic & BlueKai Keywords.  If not set, fall back
+     to the default provided below */
+    (function($){
+        $(document).ready(function() {
+        /* load 'lazy' js files after the document is ready. */
+        $('script.lazy').each(function() {
+            $(this).attr('src',$(this).attr('original-src'));
+            $(this).removeClass('lazy');
+        });
+            var keywords        =   '50 states,US states,US capitals,state information,US travel guide,education,college,university,US maps,US flags,teaching tools';
+//            var meta_elements   =   document.getElementsByTagName('meta');
+//            for(var k = 0; k < meta_elements.length; k++) {
+//                if(meta_elements[k].getAttribute('name') == 'keywords' && meta_elements[k].getAttribute('content')) {
+//                    keywords    =   meta_elements[k].getAttribute('content');
+//                }
+//            }
+//            var magnetic_iframe =   document.createElement('iframe');
+//            magnetic_iframe.setAttribute('src', 'http://domdex.com/f?c=121&k=' + encodeURIComponent(keywords).replace(/%20/g,'+').replace(/%2C/g,','));
+//            magnetic_iframe.setAttribute('width', 0);
+//            magnetic_iframe.setAttribute('height', 0);
+//            magnetic_iframe.setAttribute('frameborder', 0);
+//            magnetic_iframe.setAttribute('id', 'magneticFrame');
+//            document.body.appendChild(magnetic_iframe);
+//
+//            var hints = keywords.split(",");
+//            for (i in hints) {
+//                bk_addPageCtx("keyword", hints[i])
+//            }
+
+            bk_doJSTag(3572, 4);
+
+        /* initialize the Magnific Popup code. */
+        $('.image-link').magnificPopup({type:'image'});
+
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "7379179" });
+    (function() {
+        var s = document.createElement("script"), el =
+            document.getElementsByTagName("script")[0]; s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+    })();
+</script>
+<noscript>&lt;img id="adImage" src="--&gt;&lt;!--://b.scorecardresearch.com/p?c1=2&amp;c2=7379179&amp;cv=2.0&amp;cj=1"/&gt;</noscript>
+
+<script>
+  var customDimension1 = "3B27D762-9DDD-4B46-DDDE-E783B713ACF9";
+  var customDimension2 = "Ashburn";
+  var customDimension3 = "Other";
+  var customDimension4 = "Other";
+  var customDimension5 = "Other";
+  var customDimension6 = "Non EDU";
+  var customDimension7 = "Other";
+
+$(window).bind("load", function() {
+  //Redshift Tracking for EDU
+  $('a[href*="quinstreet.com"]').click(function( event ) {
+      event.preventDefault();
+      trackLink(this.href, 'http://www.50states.com/click_track.htm?&ref=&stype=&ptype=EDU&pname=EDU+Visit+School+Site&state=VA');
+  });
+});
+
+</script>
+
+
+
+<script type="text/javascript" id="">(function(a,b,c,f,d,e){null==a[b]&&a[c+d]&&(a[b]="loading",a[c+d](e,c=function(){a[b]="complete";a[f+d](e,c,!1)},!1))})(document,"readyState","add","remove","EventListener","DOMContentLoaded");
+(function(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.engine.4dsply.com/Scripts/infinity.js.aspx?guid\x3d085b70ab-c051-4f77-a470-565aa6044a48";a.id="infinity";a.setAttribute("data-guid","085b70ab-c051-4f77-a470-565aa6044a48");a.setAttribute("data-version","async");var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)})();</script><script type="text/javascript" id="">(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].l=1*new Date;c=e.createElement(f);d=e.getElementsByTagName(f)[0];c.async=1;c.src=g;d.parentNode.insertBefore(c,d)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create","UA-2522429-8",{userId:gaParam.userId});ga("require","displayfeatures");ga("set","dimension1",gaParam.customDimension1);ga("set","dimension2",gaParam.customDimension2);
+ga("set","dimension3",gaParam.customDimension3);ga("set","dimension4",gaParam.customDimension4);ga("set","dimension5",gaParam.customDimension5);ga("set","dimension6",gaParam.customDimension6);ga("set","dimension7",gaParam.customDimension7);ga(function(a){clientId=a.get("clientId")});ga("require","ec","ec.js");gaParam.bottomLines&&(ga("ec:addProduct",{id:gaParam.productId,name:gaParam.productName,category:gaParam.productCat,brand:gaParam.productBrand}),ga("ec:setAction","detail"));ga("send","pageview");</script><div style="display: none; visibility: hidden;"><script src="//load.sumome.com/" data-sumo-site-id="268ffe07a97c501acd841da749ac2ac81a91c911cdbb201b9b5c68640f900f6f" async="async"></script></div><script type="text/javascript" id="">var getDivsStartsAt=function(b,a){for(var e=(a||document).getElementsByTagName("div"),d=[],f=0,c;c=e[f++];)c.getAttribute("id")&&d.push(c);return d},googletag=googletag||{};googletag.cmd=googletag.cmd||[];(function(){var b=document.createElement("script");b.async=!0;b.type="text/javascript";var a="https:"==document.location.protocol;b.src=(a?"https:":"http:")+"//www.googletagservices.com/tag/js/gpt.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)})();
+googletag.cmd.push(function(){googletag.defineSlot("/6403/mchx.50states.com",[[970,90],[728,90]],"div-gpt-ad-top").addService(googletag.pubads()).setTargeting("pos","top");googletag.defineSlot("/6403/mchx.50states.com",[[300,250],[300,600]],"div-gpt-ad-topright").addService(googletag.pubads()).setTargeting("pos","topright");googletag.defineSlot("/6403/mchx.50states.com",[[300,250],[300,600]],"div-gpt-ad-bottomright").addService(googletag.pubads()).setTargeting("pos","bottomright");googletag.defineSlot("/6403/mchx.50states.com",
+[[728,90],[970,90]],"div-gpt-ad-bottom").addService(googletag.pubads()).setTargeting("pos","foot");googletag.defineSlot("/6403/50statesMobileAds",[[320,50],[300,50]],"div-gpt-ad-mobile-bottom").addService(googletag.pubads()).setTargeting("pos","foot");googletag.defineSlot("/6403/50statesMobileAds",[[1,1]],"div-gpt-ad-mobile-pixel").addService(googletag.pubads()).setTargeting("pos","foot");googletag.defineSlot("/6403/50statesMobileAds",[[320,50],[300,50]],"div-gpt-ad-mobile-top").addService(googletag.pubads()).setTargeting("pos",
+"top");googletag.pubads().setTargeting("cat","home");googletag.pubads().setTargeting("state","none");googletag.pubads().enableSingleRequest();googletag.enableServices();for(var b=getDivsStartsAt("div-gpt-ad-"),a=0;a<b.length;a++)googletag.display(b[a].id)});</script><iframe src="http://tpc.googlesyndication.com/safeframe/1-0-4/html/container.html" style="visibility: hidden; display: none;"></iframe><iframe id="sumome-jquery-iframe" style="display: none;"></iframe><iframe id="LOTCCFrameThu Jun 16 2016 21:44:40 GMT+0000 (UTC)" src="http://bcp.crwdcntrl.net/5/c=4575/rand=826690224/pv=y/int=%23OpR%2341329%2350states.com%20%3A%20Total%20Site%20Traffic/int=%23OpR%2341330%2350states.com%20%3A%20Site%20Section%20%3A%20abbreviations/adv=%23OpR%2342598%23Referral%20Site%20%3A%20/rt=ifr" style="border: 0px; width: 0px; height: 0px; display: block;"></iframe><iframe id="google_osd_static_frame_3539743428118" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><a href="javascript:void(0);" title="SumoMe" style="background-color: rgb(15, 82, 186); position: fixed; z-index: 10000000000; padding: 0px; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBNjE1OTIxRTcwNzUxMUUzQkUxRkIxNEU0NUM0RjM4OCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBNjE1OTIxRjcwNzUxMUUzQkUxRkIxNEU0NUM0RjM4OCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUzQjQyQzRENzA3NDExRTNCRTFGQjE0RTQ1QzRGMzg4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUzQjQyQzRFNzA3NDExRTNCRTFGQjE0RTQ1QzRGMzg4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+t9pejAAAAWRJREFUeNrslz1Lw1AUhhOlYhXFiEt/gIigm+isg5sOjs7+D/+HY91ENxGRxFLxY+zWSRCdHMQ6OTgYnwsnEEppTtMEAp4DL29yuefcJ/fk9sOP49irckx4FQ8DNEADNEADNMD/CvjV6x0j9QMwdx11nY+Q47t18u7gMjqlQE0Dh92iVefcbyhyJrETtJIXMEKH6IJi0wq4JRlyHjG+lQHXREeSmxvQxR66ouicAi6JeYHcGZAzhZ3Jw6fXGQ1wIQjesGe53UYhxRcVcEnMokvm7fbBnaMDGXplnZdxTnGYut5EbRZpSPvaQ+CSqAvkPprh+lo6Mqh+LsD+7V9DD+gGBcrDWpNde5ROpKOVlewP+08iLf1w80r6mGvQ4vfcO0jyJ9YpCa6bBaf9JolKAmxpJmkAw5IAw6IA79FPwXC/6K4QQN6Tb+ypYMCOvN/eWKfYfm4ZoAEaoAEaoAEaYOUB/wQYAATRi8cPOM7SAAAAAElFTkSuQmCC); width: 44px; height: 40px; text-indent: -10000px; display: none !important; background-position-x: 4px; background-repeat: no-repeat no-repeat;"></a></body></html>
