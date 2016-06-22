@@ -66,7 +66,29 @@ def scrape(n,l,root,file_array,timeout):
     print "All jobs DONE~!"
     logging.info("All jobs DONE~!")
 
-def scrape_m(root,n_cores,timeout):
+def scrape_m():
+	root = raw_input("enter an output path: ")	
+	n_cores = raw_input("enter the number of jobs: ")	
+	timeout = raw_input("timeout in sec: ")
+
+	if root == '':
+		root = "."
+	if n_cores != '' and n_cores != '0':
+		n_cores = int(n_cores)
+	else:
+		n_cores = 1
+	if  timeout != '':
+		timeout = int(timeout)
+	else:
+		timeout = 30 
+
+	if not os.path.exists(root + "/data"):
+    		os.makedirs(root+"/data/img")
+    		os.makedirs(root+"/data/src")
+		
+	if n_cores > multiprocessing.cpu_count():
+		n_cores = multiprocessing.cpu_count()
+
 	file_array=[]
 	try:
        		with open('./urls.txt') as f:
@@ -128,84 +150,7 @@ def uniquify(path, sep = ''):
         tempfile._name_sequence = orig
     return filename
 
-def Choose(x):
-    unused_var = os.system("clear")
-    if x == '1':
-	root = raw_input("enter an output path: ")	
-	n_cores = raw_input("enter the number of jobs: ")	
-	timeout = raw_input("timeout in sec: ")
-
-	if root == '':
-		root = "."
-	if n_cores != '' and n_cores != '0':
-		n_cores = int(n_cores)
-	else:
-		n_cores = 1
-	if  timeout != '':
-		timeout = int(timeout)
-	else:
-		timeout = 30 
-
-	if not os.path.exists(root + "/data"):
-    		os.makedirs(root+"/data/img")
-    		os.makedirs(root+"/data/src")
-		
-	if n_cores > multiprocessing.cpu_count():
-		n_cores = multiprocessing.cpu_count()
-
-	scrape_m(root,n_cores,timeout)
-        main()
-
-    elif x == '2':
-	while True:
-		print 'Cleaning data'
-		print '1 - Remove garbage data'
-		print '0 - Back to main menu'
-		user_input = raw_input("Choose option: ")
-		if user_input == '0' or user_input == '':
-			unused_var = os.system("clear")
-			main()	
-		elif user_input == '1':
-			cln_path = raw_input("Enter a data path to clean: ")
-			img_dir = cln_path + "/img/"
-			src_dir = cln_path + "/src/"
-			countI = 0
-			countS = 0
-			rm_flag = "N"
-
-			try:
-        			for file in os.listdir(img_dir):
-                			if file.endswith(".png") and int(os.stat(img_dir + file).st_size) <= 21565:
-                        			countI += 1
-				rm_flag = raw_input(str(countI) + " garbage data found, do you want remove all of them (Y/N): ")
-			except OSError:
-				pass
-		
-			countI = 0			
-			if rm_flag == 'Y' or rm_flag == 'Yes' or rm_flag == 'y' or rm_flag == 'yes':
-				try:
-        				for file in os.listdir(img_dir):
-                				if file.endswith(".png") and int(os.stat(img_dir + file).st_size) <= 21565:
-                        				countI += 1
-                        				for fileS in os.listdir(src_dir):
-                                				if fileS.endswith(".txt") and fileS.split(".")[0] == file.split(".")[0]:
-                                        				countS += 1
-                                        				os.remove(src_dir + fileS)
-                        				os.remove(img_dir + file)
-					print "number of garbage img files removed: " + str(countI)
-					print "number of garbage src files removed: " + str(countS)			
-				except OSError:
-        				pass
-			else:
-				unused_var = os.system("clear")
-				Choose(2)
-				
-		else:
-			unused_var = os.system("clear")
-			Choose(2)
-
-
-    elif x == 'a':
+def AWS():
 	print "Transfering data with AWS S3 (USE ABSOLUTE PATH)"
 	print "i.e. s3://digitas-admin/home/<user_name>/ <--> /home/ubuntu/<dir_path>"
 	from_path = raw_input("from: ")
@@ -230,6 +175,67 @@ def Choose(x):
 	except Exception,e:
 		print "failed: " + str(e)
 
+def clean():
+	limit_size = 2451971 # 21565
+	while True:
+		print 'Cleaning data'
+		print '1 - Remove garbage data'
+		print '0 - Back to main menu'
+		user_input = raw_input("Choose option: ")
+		if user_input == '0' or user_input == '':
+			unused_var = os.system("clear")
+			main()	
+		elif user_input == '1':
+			cln_path = raw_input("Enter a data path to clean: ")
+			img_dir = cln_path + "/img/"
+			src_dir = cln_path + "/src/"
+			countI = 0
+			countS = 0
+			rm_flag = "N"
+
+			try:
+        			for file in os.listdir(img_dir):
+                			if file.endswith(".png") and int(os.stat(img_dir + file).st_size) <= limit_size:
+                        			countI += 1
+				rm_flag = raw_input(str(countI) + " garbage data found, do you want remove all of them (Y/N): ")
+			except OSError:
+				pass
+		
+			countI = 0			
+			if rm_flag == 'Y' or rm_flag == 'Yes' or rm_flag == 'y' or rm_flag == 'yes':
+				try:
+        				for file in os.listdir(img_dir):
+                				if file.endswith(".png") and int(os.stat(img_dir + file).st_size) <= limit_size:
+							fileS = file.split(".")[0] + '.txt'
+							if os.path.isfile(src_dir + fileS):
+								os.remove(src_dir + fileS)
+								countS += 1 
+                        				os.remove(img_dir + file)
+							countI += 1
+					print "number of garbage img files removed: " + str(countI)
+					print "number of garbage src files removed: " + str(countS)			
+				except OSError:
+        				pass
+			else:
+				unused_var = os.system("clear")
+				clean()
+				
+		else:
+			unused_var = os.system("clear")
+			clean()
+
+
+def Choose(x):
+    unused_var = os.system("clear")
+    if x == '1':
+	scrape_m()
+        main()
+
+    elif x == '2':
+	clean()
+
+    elif x == 'a':
+	aws()
     elif x == '0':
 	sys.exit()
     else:
