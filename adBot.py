@@ -231,7 +231,7 @@ def compress():
 	cutfile_path = raw_input("Enter a path for output text file: ")
 	
 	if compress_path == '':
-		compress_path = './data/img'
+		compress_path = './data/img/'
 	if cutfile_path == '':
 		cutfile_path = './'
 	
@@ -251,7 +251,7 @@ def compress():
 
 	for file in os.listdir(compress_path):
 
-        	im = Image.open(compress_path + file)
+        	im = Image.open(compress_path + "/" + file)
         	cutfile.write(file.split(".")[0])
 
 	######TOP REGION######
@@ -259,21 +259,21 @@ def compress():
         	region.thumbnail(T_size)
 	        imarray = list(region.getdata())
         	for item in imarray:
-                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + st$
+                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
 
 	######LEFT REGION######
         	region = im.crop(L_box)
         	region.thumbnail(L_size)
 	        imarray = list(region.getdata())
         	for items in imarray:
-                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + st$
+                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
 
 	######RIGHT REGION######
         	region = im.crop(R_box)
         	region.thumbnail(R_size)
 	        imarray = list(region.getdata())
         	for items in imarray:
-                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + st$
+                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
 
         	cutfile.write('\n')
 
@@ -297,7 +297,7 @@ def Choose(x):
     elif x == '0':
 	sys.exit()
    
-     else:
+    else:
 	unused_var = os.system("clear")
 	main()
 
@@ -307,7 +307,7 @@ def main():
 		print "please choose one of the follow options:"
 		print "1 - Scraing data (input file: ./urls.txt)"
 		print "2 - Cleaning data"
-		print "3 - Compressing image""
+		print "3 - Compressing image"
 		print "a - Transfering data with AWS S3"
 		print "0 - Exit"
 		user_input = raw_input("Choose option: ")	
