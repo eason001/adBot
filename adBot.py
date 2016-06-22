@@ -1,5 +1,5 @@
 ###Welcome to adBot 
-###Version: v 1.3.4
+###Version: v 1.3.5
 ###Author: Yi Ren Cheng
 
 import sys
