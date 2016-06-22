@@ -150,7 +150,7 @@ def uniquify(path, sep = ''):
         tempfile._name_sequence = orig
     return filename
 
-def AWS():
+def aws():
 	print "Transfering data with AWS S3 (USE ABSOLUTE PATH)"
 	print "i.e. s3://digitas-admin/home/<user_name>/ <--> /home/ubuntu/<dir_path>"
 	from_path = raw_input("from: ")
@@ -250,7 +250,8 @@ def compress():
 	R_box = (1050, 350, 1400, 1000)
 
 	for file in os.listdir(compress_path):
-
+		
+		print("compressing..." + file)
         	im = Image.open(compress_path + "/" + file)
         	cutfile.write(file.split(".")[0])
 
