@@ -319,7 +319,8 @@ def reduce():
 
 	try:
 		os.system("export _JAVA_OPTIONS='-Xms1g -Xmx40g'")
-		os.system("rm -r " + output_path + "/pcaFeatures")
+		if os.path.isdir(output_path + "/pcaFeatures"):
+			os.system("rm -r " + output_path + "/pcaFeatures")
 	except Exception,e:
 		print "failed: " + str(e)
 
