@@ -281,7 +281,6 @@ def compress():
 	cutfile.close()
 
 def reduce():
-	#export _JAVA_OPTIONS='-Xms1g -Xmx40g'
 	from pyspark import SparkContext
 	from pyspark.sql import SQLContext, Row
 	from pyspark.ml.feature import PCA
@@ -314,14 +313,13 @@ def reduce():
 	inputfile.close()
 	
 	reduced_n = raw_input("Enter the number of features you want to reduce to: ")
-	#print "input n: " + input_n + " output n: " + reduced_n
 	if int(reduced_n) >= input_n:
 		print "reduced features must be smaller than input features."
 		reduce()
 
 	try:
 		os.system("export _JAVA_OPTIONS='-Xms1g -Xmx40g'")
-		os.system("rm -r " + output_path + "/*")
+		os.system("rm -r " + output_path + "/pcaFeatures")
 	except Exception,e:
 		print "failed: " + str(e)
 
@@ -339,20 +337,13 @@ def reduce():
 		lines = lines.map(lambda x:[float(y) for y in x[1:]])
 
 		###with ml
-		lines = lines.map(lambda x: Row(features=Vectors.dense(x[1:10]))).toDF()
-#		lines = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
+		lines = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
 		pca = PCA(k=int(reduced_n),inputCol="features", outputCol="pca_features")
 		model = pca.fit(lines)
 		outData = model.transform(lines)
 		pcaFeatures = model.transform(lines).select("pca_features")
 
-		###with mllib
-		#clean_lines = float_lines.map(lambda x:Vectors.dense(x[1:]))
-		#model = PCAmllib(10).fit(clean_lines)
-		#transformed = model.transform(clean_lines)
-
 		###Write out
-		#outData.rdd.repartition(1).saveAsTextFile(output_path + "/outData")
 		pcaFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/pcaFeatures")
 		print "Dimension reduction finished!"
 		main()
