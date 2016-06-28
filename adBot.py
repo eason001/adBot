@@ -298,8 +298,11 @@ def reduce():
 	if output_path == '':
 		output_path = './data/reduced_data'
 	
-	if not os.path.isfile(input_file) or not os.path.isdir(output_path):
-		print "Directory or File do not exist, please enter a valid directory of file path."
+	if not os.path.isfile(input_file):
+		print "Input File do not exist."
+		reduce()
+	if not os.path.isdir(output_path):
+		print "Directory path is invalid.."
 		reduce()
 	
 	inputfile = open(input_file, 'r')
