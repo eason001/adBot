@@ -296,13 +296,13 @@ def reduce():
 		input_file = os.getcwd() + '/data/compressed_data/compressed_data'
 
 	if output_path == '':
-		output_path = os.getcwd() + '/data/reduced_data'
+		output_path = os.getcwd() + '/data/reduced_data/'
 	
 	if not os.path.isfile(input_file):
 		print "Input File do not exist."
 		reduce()
 	if not os.path.isdir(output_path):
-		print "Directory path is invalid.."
+		print "Directory path is invalid."
 		reduce()
 	
 	inputfile = open(input_file, 'r')
