@@ -308,7 +308,7 @@ def reduce():
 	inputfile = open(input_file, 'r')
 	for line in inputfile:
 		input_n = len(line.split(" "))
-		print "Selected data set has " + input_n
+		print "Selected data set has " + str(input_n)
 		break
 	
 	inputfile.close()
