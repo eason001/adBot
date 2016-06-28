@@ -314,8 +314,8 @@ def reduce():
 	inputfile.close()
 	
 	reduced_n = raw_input("Enter the number of features you want to reduce to: ")
-	print "input n: " + input_n + " output n: " + reduced_n
-	if reduced_n >= input_n:
+	#print "input n: " + input_n + " output n: " + reduced_n
+	if int(reduced_n) >= input_n:
 		print "reduced features must be smaller than input features."
 		reduce()
 
@@ -341,7 +341,7 @@ def reduce():
 		###with ml
 		lines = lines.map(lambda x: Row(features=Vectors.dense(x[1:10]))).toDF()
 #		lines = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
-		pca = PCA(k=reduced_n,inputCol="features", outputCol="pca_features")
+		pca = PCA(k=int(reduced_n),inputCol="features", outputCol="pca_features")
 		model = pca.fit(lines)
 		outData = model.transform(lines)
 		pcaFeatures = model.transform(lines).select("pca_features")
