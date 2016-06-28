@@ -298,7 +298,7 @@ def reduce():
 	if output_path == '':
 		output_path = './data/reduced_data'
 	
-	if not os.path.isFile(input_file) or not os.path.isDir(output_path):
+	if not os.path.isfile(input_file) or not os.path.isdir(output_path):
 		print "Directory or File do not exist, please enter a valid directory of file path."
 		reduce()
 	
@@ -323,7 +323,7 @@ def reduce():
 
 	print "Please select a dimension reduction method:"
 	print "1 - PCA"
-	print "x - Back""
+	print "x - Back"
 	option = raw_input("Choose option: ")
 
 	if option == '1':
