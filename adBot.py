@@ -280,6 +280,54 @@ def compress():
 
 	cutfile.close()
 
+def reduce():
+	from pyspark import SparkContext
+	from pyspark.sql import SQLContext, Row
+	from pyspark.ml.feature import PCA
+	from pyspark.mllib.feature import PCA as PCAmllib
+	from pyspark.mllib.linalg import Vectors
+	from pyspark import SparkConf, SparkContext
+
+	input_file = raw_input("Enter input file (absolute path required): ")
+	output_path = raw_input("Enter a path for output data: ")	
+
+	if input_file == '':
+		input_file = './data/compressed_data/compressed_data'
+
+	if output_path == '':
+		output_path = './data/reduced_data/'
+	
+	if not os.path.isFile(input_file) or not os.path.isDir(output_path):
+		print "Directory or File do not exist, please enter a valid directory of file path."
+		reduce()
+	
+	inputfile = open(input_file, 'r')
+
+
+	reduced_n = raw_input("")
+
+	conf = (SparkConf().set("spark.driver.maxResultSize", "5g"))
+	sc = SparkContext(conf=conf)
+	sqlContext = SQLContext(sc)
+	lines = sc.textFile("/mnt/yi-ad-proj/compressed_data/compressed_data").map(lambda x:x.split(" "))
+	lines = lines.map(lambda x:[float(y) for y in x[1:]])
+
+	###with ml
+	lines = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
+	pca = PCA(k=10,inputCol="features", outputCol="pca_features")
+	model = pca.fit(lines)
+	outData = model.transform(lines)
+	pcaFeatures = model.transform(lines).select("pca_features")
+
+	###with mllib
+	#clean_lines = float_lines.map(lambda x:Vectors.dense(x[1:]))
+	#model = PCAmllib(10).fit(clean_lines)
+	#transformed = model.transform(clean_lines)
+
+	###Write out
+	outData.rdd.repartition(1).saveAsTextFile("/home/ubuntu/yi/outData")
+	pcaFeatures.rdd.repartition(1).saveAsTextFile("/home/ubuntu/yi/pcaFeatures")
+
 def Choose(x):
     unused_var = os.system("clear")
     if x == '1':
@@ -291,6 +339,9 @@ def Choose(x):
 
     elif x == '3':
 	compress()
+
+    elif x == '4':
+	reduce()
 
     elif x == 'a':
 	aws()
@@ -309,6 +360,7 @@ def main():
 		print "1 - Scraing data (input file: ./urls.txt)"
 		print "2 - Cleaning data"
 		print "3 - 3C Steps (Cutting -> Compressing -> Converting)"
+		print "4 - Dimension Reduction"
 		print "a - Transfering data with AWS S3"
 		print "0 - Exit"
 		user_input = raw_input("Choose option: ")	
