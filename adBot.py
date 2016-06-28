@@ -281,6 +281,7 @@ def compress():
 	cutfile.close()
 
 def reduce():
+	#export _JAVA_OPTIONS='-Xms1g -Xmx40g'
 	from pyspark import SparkContext
 	from pyspark.sql import SQLContext, Row
 	from pyspark.ml.feature import PCA
@@ -288,45 +289,76 @@ def reduce():
 	from pyspark.mllib.linalg import Vectors
 	from pyspark import SparkConf, SparkContext
 
-	input_file = raw_input("Enter input file (absolute path required): ")
-	output_path = raw_input("Enter a path for output data: ")	
+	input_file = raw_input("Enter input data set (absolute path required): ")
+	output_path = raw_input("Enter a path for output data (must be an empty directory): ")	
 
 	if input_file == '':
 		input_file = './data/compressed_data/compressed_data'
 
 	if output_path == '':
-		output_path = './data/reduced_data/'
+		output_path = './data/reduced_data'
 	
 	if not os.path.isFile(input_file) or not os.path.isDir(output_path):
 		print "Directory or File do not exist, please enter a valid directory of file path."
 		reduce()
 	
 	inputfile = open(input_file, 'r')
+	for line in inputfile:
+		input_n = len(line.split(" "))
+		print "Selected data set has " + input_n
+		break
+	
+	inputfile.close()
+	
+	reduced_n = raw_input("Enter the number of features you want to reduce to: ")
+	if reduced_n >= input_n:
+		print "reduced features must be smaller than input features."
+		reduce()
 
+	try:
+		os.system("export _JAVA_OPTIONS='-Xms1g -Xmx40g'")
+		os.system("rm -r " + output_path + "/*")
+	except Exception,e:
+		print "failed: " + str(e)
 
-	reduced_n = raw_input("")
+	print "Please select a dimension reduction method:"
+	print "1 - PCA"
+	print "x - Back""
+	option = raw_input("Choose option: ")
 
-	conf = (SparkConf().set("spark.driver.maxResultSize", "5g"))
-	sc = SparkContext(conf=conf)
-	sqlContext = SQLContext(sc)
-	lines = sc.textFile("/mnt/yi-ad-proj/compressed_data/compressed_data").map(lambda x:x.split(" "))
-	lines = lines.map(lambda x:[float(y) for y in x[1:]])
+	if option == '1':
 
-	###with ml
-	lines = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
-	pca = PCA(k=10,inputCol="features", outputCol="pca_features")
-	model = pca.fit(lines)
-	outData = model.transform(lines)
-	pcaFeatures = model.transform(lines).select("pca_features")
+		conf = (SparkConf().set("spark.driver.maxResultSize", "5g"))
+		sc = SparkContext(conf=conf)
+		sqlContext = SQLContext(sc)
+		lines = sc.textFile(input_file).map(lambda x:x.split(" "))
+		lines = lines.map(lambda x:[float(y) for y in x[1:]])
 
-	###with mllib
-	#clean_lines = float_lines.map(lambda x:Vectors.dense(x[1:]))
-	#model = PCAmllib(10).fit(clean_lines)
-	#transformed = model.transform(clean_lines)
+		###with ml
+		lines = lines.map(lambda x: Row(features=Vectors.dense(x[1:10]))).toDF()
+#		lines = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
+		pca = PCA(k=10,inputCol="features", outputCol="pca_features")
+		model = pca.fit(lines)
+		outData = model.transform(lines)
+		pcaFeatures = model.transform(lines).select("pca_features")
 
-	###Write out
-	outData.rdd.repartition(1).saveAsTextFile("/home/ubuntu/yi/outData")
-	pcaFeatures.rdd.repartition(1).saveAsTextFile("/home/ubuntu/yi/pcaFeatures")
+		###with mllib
+		#clean_lines = float_lines.map(lambda x:Vectors.dense(x[1:]))
+		#model = PCAmllib(10).fit(clean_lines)
+		#transformed = model.transform(clean_lines)
+
+		###Write out
+		#outData.rdd.repartition(1).saveAsTextFile(output_path + "/outData")
+		pcaFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/pcaFeatures")
+		print "Dimension reduction finished!"
+		main()
+	
+	if option == 'x':
+		main()
+
+	print "invalid option"
+	main()
+				
 
 def Choose(x):
     unused_var = os.system("clear")
