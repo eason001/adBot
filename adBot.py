@@ -293,10 +293,10 @@ def reduce():
 	output_path = raw_input("Enter a path for output data (must be an empty directory): ")	
 
 	if input_file == '':
-		input_file = './data/compressed_data/compressed_data'
+		input_file = os.getcwd() + '/data/compressed_data/compressed_data'
 
 	if output_path == '':
-		output_path = './data/reduced_data'
+		output_path = os.getcwd() + '/data/reduced_data'
 	
 	if not os.path.isfile(input_file):
 		print "Input File do not exist."
