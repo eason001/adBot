@@ -243,7 +243,7 @@ def compress():
 		print "Directory does not exist, please enter a valid path."
 		compress()
 	
-	cutfile = open(cutfile_path + '/cutted_data', 'w')
+	cutfile = open(cutfile_path + '/compressed_data', 'w')
 
 	T_size = (80,20)
 	L_size = (35,65)
