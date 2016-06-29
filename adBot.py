@@ -459,7 +459,7 @@ def cluster():
 		outputfile = open(output_path + '/cluster_data', 'w')
 		inputfile = open(output_path + '/clusterFeatures/part-00000', 'r')
 		for line in inputfile:
-        		x = line.split("[")[1].split("]")[0]
+        		x = line.split("=")[1].split(")")[0]
         		x = re.sub(',','',x)
         		outputfile.write(x+'\n')
 		inputfile.close()
