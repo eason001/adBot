@@ -229,6 +229,10 @@ def compress():
 
 	compress_path = raw_input("Enter an image path to compress: ")
 	cutfile_path = raw_input("Enter a path for output text file: ")
+	gray_flag = raw_input("Compress it in Grayscale (Y/N): ")	
+
+	if gray_flag == '':
+		gray_flag = 'N'
 	
 	if compress_path == '':
 		compress_path = './data/img/'
@@ -260,21 +264,33 @@ def compress():
         	region.thumbnail(T_size)
 	        imarray = list(region.getdata())
         	for item in imarray:
-                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
+			if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
+				tmp = (item[0] + item[1] + item[2])/3
+                		cutfile.write(" " + str(tmp))
+			else:
+                		cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
 
 	######LEFT REGION######
         	region = im.crop(L_box)
         	region.thumbnail(L_size)
 	        imarray = list(region.getdata())
         	for items in imarray:
-                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
+			if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
+				tmp = (item[0] + item[1] + item[2])/3
+                		cutfile.write(" " + str(tmp))
+			else:
+                		cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
 
 	######RIGHT REGION######
         	region = im.crop(R_box)
         	region.thumbnail(R_size)
 	        imarray = list(region.getdata())
         	for items in imarray:
-                	cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
+			if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
+				tmp = (item[0] + item[1] + item[2])/3
+                		cutfile.write(" " + str(tmp))
+			else:
+                		cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
 
         	cutfile.write('\n')
 
