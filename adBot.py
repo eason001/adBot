@@ -226,7 +226,7 @@ def clean():
 
 def compress():
 	from PIL import Image
-
+	
 	compress_path = raw_input("Enter an image path to compress: ")
 	cutfile_path = raw_input("Enter a path for output text file: ")
 	gray_flag = raw_input("Compress it in Grayscale (Y/N): ")	
@@ -253,6 +253,8 @@ def compress():
 	L_box = (1, 350, 350, 1000)
 	R_box = (1050, 350, 1400, 1000)
 
+	counter = 0
+	max_count = 4
 	for file in os.listdir(compress_path):
 		
 		print("compressing..." + file)
@@ -262,39 +264,56 @@ def compress():
 	######TOP REGION######
         	region = im.crop(T_box)
         	region.thumbnail(T_size)
-	        imarray = list(region.getdata())
+		if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
+			region = region.convert('LA')
+			max_count = 2        	
+		imarray = list(region.getdata())
         	for item in imarray:
-			if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
-				tmp = (item[0] + item[1] + item[2])/3
-                		cutfile.write(" " + str(tmp))
-			else:
-                		cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
+			counter = 0
+			for x in item:
+				counter += 1
+				if counter < max_count:
+                			cutfile.write(" " + str(x))
 
 	######LEFT REGION######
         	region = im.crop(L_box)
         	region.thumbnail(L_size)
+		if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
+			region = region.convert('LA') 
+			max_count = 2       	
 	        imarray = list(region.getdata())
         	for items in imarray:
-			if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
-				tmp = (item[0] + item[1] + item[2])/3
-                		cutfile.write(" " + str(tmp))
-			else:
-                		cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
+			counter = 0
+			for x in item:
+				counter += 1
+				if counter < max_count:
+                			cutfile.write(" " + str(x))
 
 	######RIGHT REGION######
         	region = im.crop(R_box)
         	region.thumbnail(R_size)
+		if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
+			region = region.convert('LA') 
+			max_count = 2       	
 	        imarray = list(region.getdata())
         	for items in imarray:
-			if gray_flag == 'Y' or gray_flag == 'Yes' or gray_flag == 'y' or gray_flag == 'yes':
-				tmp = (item[0] + item[1] + item[2])/3
-                		cutfile.write(" " + str(tmp))
-			else:
-                		cutfile.write(" " + str(item[0]) + " " + str(item[1]) + " " + str(item[2]))
+			counter = 0
+			for x in item:
+				counter += 1
+				if counter < max_count:
+                			cutfile.write(" " + str(x))
 
         	cutfile.write('\n')
 
 	cutfile.close()
+
+	inputfile = open(cutfile_path + '/compressed_data', 'r')
+	for line in inputfile:
+		input_n = len(line.split(" "))
+		print "compressed data set has " + str(input_n) + " features"
+		break
+	
+	inputfile.close()
 
 def reduce():
 	from pyspark import SparkContext
@@ -323,7 +342,7 @@ def reduce():
 	inputfile = open(input_file, 'r')
 	for line in inputfile:
 		input_n = len(line.split(" "))
-		print "Selected data set has " + str(input_n)
+		print "Selected data set has " + str(input_n) + " features"
 		break
 	
 	inputfile.close()
