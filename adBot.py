@@ -311,7 +311,7 @@ def reduce():
 		input_file = os.getcwd() + '/data/compressed_data/compressed_data'
 
 	if output_path == '':
-		output_path = os.getcwd() + '/data/reduced_data/'
+		output_path = os.getcwd()
 	
 	if not os.path.isfile(input_file):
 		print "Input File do not exist."
