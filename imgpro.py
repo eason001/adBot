@@ -247,10 +247,16 @@ def contour():
 	#fig.savefig(out_path + 'bibme0_contour.png')
 	#plt.show()
 
+def togray():
+
+        im = Image.open(path + 'bibme0.png')
+        gray_im = rgb2gray(np.array(im))
+        toprint(gray_im,"gray_testim.png")
 
 if __name__=="__main__":
 #	edge()
 #	edge_canny()
 #	reduce()
 #	skeleton()
-	contour()
+#	contour()
+	togray()
