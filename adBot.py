@@ -12,6 +12,7 @@ from selenium.common.exceptions import TimeoutException
 import tempfile
 import itertools as IT
 import os
+import re
 		
 def scrape(n,l,root,file_array,timeout):
     from selenium import webdriver
@@ -381,6 +382,16 @@ def reduce():
 
 		###Write out
 		pcaFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/pcaFeatures")
+
+		outputfile = open(output_path + '/reduced_data', 'w')
+		inputfile = open(output_path + '/pcaFeatures/part-00000', 'r')
+		for line in inputfile:
+        		x = line.split("[")[1].split("]")[0]
+        		x = re.sub(',','',x)
+        		outputfile.write(x+'\n')
+		inputfile.close()
+		outputfile.close()	
+
 		print "Dimension reduction finished!"
 		main()
 	
