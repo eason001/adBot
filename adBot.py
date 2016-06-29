@@ -371,7 +371,7 @@ def reduce():
 		sc = SparkContext(conf=conf)
 		sqlContext = SQLContext(sc)
 		lines = sc.textFile(input_file).map(lambda x:x.split(" "))
-		lines = lines.map(lambda x:[float(y) for y in x[1:]])
+		lines = lines.map(lambda x:[float(y) for y in x])
 		df = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
 
 		###with ml
@@ -444,7 +444,7 @@ def cluster():
 		sc = SparkContext(conf=conf)
 		sqlContext = SQLContext(sc)
 		lines = sc.textFile(input_file).map(lambda x:x.split(" "))
-		lines = lines.map(lambda x:[float(y) for y in x[1:]])
+		lines = lines.map(lambda x:[float(y) for y in x])
 		df = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
 
 		###with ml
@@ -452,14 +452,14 @@ def cluster():
         	model = kmeans.fit(df)
         	centers = model.clusterCenters()
         	print len(centers)
-       	 	kmFeatures = model.transform(df).select("prediction")
+       	 	kmFeatures = model.transform(df).select("features", "prediction")
 		###Write out
 		kmFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/clusterFeatures")
 
 		outputfile = open(output_path + '/cluster_data', 'w')
 		inputfile = open(output_path + '/clusterFeatures/part-00000', 'r')
 		for line in inputfile:
-        		x = line.split("=")[1].split(")")[0]
+        		x = line.split("=")[2].split(")")[0]
         		x = re.sub(',','',x)
         		outputfile.write(x+'\n')
 		inputfile.close()
