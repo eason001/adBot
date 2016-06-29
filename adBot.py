@@ -1,5 +1,5 @@
 ###Welcome to adBot 
-###Version: v 1.4.0
+###Version: v 1.4.2
 ###Author: Yi Ren Cheng
 
 import sys
@@ -355,8 +355,8 @@ def reduce():
 
 	try:
 		os.system("export _JAVA_OPTIONS='-Xms1g -Xmx40g'")
-		if os.path.isdir(output_path + "/pcaFeatures"):
-			os.system("rm -r " + output_path + "/pcaFeatures")
+		if os.path.isdir(output_path + "/reducedFeatures"):
+			os.system("rm -r " + output_path + "/reducedFeatures")
 	except Exception,e:
 		print "failed: " + str(e)
 
@@ -372,19 +372,19 @@ def reduce():
 		sqlContext = SQLContext(sc)
 		lines = sc.textFile(input_file).map(lambda x:x.split(" "))
 		lines = lines.map(lambda x:[float(y) for y in x[1:]])
+		df = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
 
 		###with ml
-		lines = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
 		pca = PCA(k=int(reduced_n),inputCol="features", outputCol="pca_features")
-		model = pca.fit(lines)
-		outData = model.transform(lines)
-		pcaFeatures = model.transform(lines).select("pca_features")
+		model = pca.fit(df)
+		outData = model.transform(df)
+		pcaFeatures = model.transform(df).select("pca_features")
 
 		###Write out
-		pcaFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/pcaFeatures")
+		pcaFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/reducedFeatures")
 
 		outputfile = open(output_path + '/reduced_data', 'w')
-		inputfile = open(output_path + '/pcaFeatures/part-00000', 'r')
+		inputfile = open(output_path + '/reducedFeatures/part-00000', 'r')
 		for line in inputfile:
         		x = line.split("[")[1].split("]")[0]
         		x = re.sub(',','',x)
@@ -401,6 +401,79 @@ def reduce():
 	print "invalid option"
 	main()
 				
+def cluster():
+	from pyspark import SparkContext
+	from pyspark.sql import SQLContext, Row
+	from pyspark.ml.feature import PCA
+	from pyspark.mllib.feature import PCA as PCAmllib
+	from pyspark.mllib.linalg import Vectors
+	from pyspark import SparkConf, SparkContext
+	from pyspark.ml.clustering import KMeans
+
+	input_file = raw_input("Enter input data set (absolute path required): ")
+	output_path = raw_input("Enter a path for output data (must be an empty directory): ")	
+
+	if input_file == '':
+		input_file = os.getcwd() + '/data/reduced_data/reduced_data'
+
+	if output_path == '':
+		output_path = os.getcwd()
+	
+	if not os.path.isfile(input_file):
+		print "Input File do not exist."
+		cluster()
+	if not os.path.isdir(output_path):
+		print "Directory path is invalid."
+		cluster()
+	
+	try:
+		os.system("export _JAVA_OPTIONS='-Xms1g -Xmx40g'")
+		if os.path.isdir(output_path + "/clusterFeatures"):
+			os.system("rm -r " + output_path + "/clusterFeatures")
+	except Exception,e:
+		print "failed: " + str(e)
+
+	print "Please select a clustering method:"
+	print "1 - KMeans"
+	print "x - Back"
+	option = raw_input("Choose option: ")
+
+	if option == '1':
+
+		conf = (SparkConf().set("spark.driver.maxResultSize", "5g"))
+		sc = SparkContext(conf=conf)
+		sqlContext = SQLContext(sc)
+		lines = sc.textFile(input_file).map(lambda x:x.split(" "))
+		lines = lines.map(lambda x:[float(y) for y in x[1:]])
+		df = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
+
+		###with ml
+		kmeans = KMeans(k=2,seed=1)
+        	model = kmeans.fit(df)
+        	centers = model.clusterCenters()
+        	print len(centers)
+       	 	kmFeatures = model.transform(df).select("prediction")
+		###Write out
+		kmFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/clusterFeatures")
+
+		outputfile = open(output_path + '/cluster_data', 'w')
+		inputfile = open(output_path + '/clusterFeatures/part-00000', 'r')
+		for line in inputfile:
+        		x = line.split("[")[1].split("]")[0]
+        		x = re.sub(',','',x)
+        		outputfile.write(x+'\n')
+		inputfile.close()
+		outputfile.close()	
+
+		print "Data Clustering finished!"
+		main()
+	
+	if option == 'x':
+		main()
+
+	print "invalid option"
+	main()
+	
 
 def Choose(x):
     unused_var = os.system("clear")
@@ -416,6 +489,9 @@ def Choose(x):
 
     elif x == '4':
 	reduce()
+
+    elif x == '5':
+	cluster()
 
     elif x == 'a':
 	aws()
@@ -435,6 +511,7 @@ def main():
 		print "2 - Cleaning data"
 		print "3 - 3C Steps (Cutting -> Compressing -> Converting)"
 		print "4 - Dimension Reduction"
+		print "5 - Clustering"
 		print "a - Transfering data with AWS S3"
 		print "0 - Exit"
 		user_input = raw_input("Choose option: ")	
