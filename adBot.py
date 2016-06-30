@@ -409,6 +409,8 @@ def cluster():
 	from pyspark.mllib.linalg import Vectors
 	from pyspark import SparkConf, SparkContext
 	from pyspark.ml.clustering import KMeans
+	from numpy import array
+	from math import sqrt
 
 	input_file = raw_input("Enter input data set (absolute path required): ")
 	output_path = raw_input("Enter a path for output data (must be an empty directory): ")	
@@ -446,13 +448,19 @@ def cluster():
 		lines = sc.textFile(input_file).map(lambda x:x.split(" "))
 		lines = lines.map(lambda x:[float(y) for y in x])
 		df = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
-
+		pdf = df.toPandas()
 		###with ml
-		kmeans = KMeans(k=2,seed=1)
+		kmeans = KMeans(k=10, seed=1,initSteps=5, tol=1e-4, maxIter=20, initMode="k-means||", featuresCol="features")
         	model = kmeans.fit(df)
-        	centers = model.clusterCenters()
-        	print len(centers)
        	 	kmFeatures = model.transform(df).select("features", "prediction")
+		
+		###Evaluation
+		rows = transformed.collect()
+		WSSSE = 0
+		for i in rows:
+    			WSSSE += sqrt(sum([x**2 for x in (model.clusterCenters()[i[1]]-i[0])]))
+		print("Within Set Sum of Squared Error = " + str(WSSSE))
+
 		###Write out
 		kmFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/clusterFeatures")
 
