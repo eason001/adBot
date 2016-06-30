@@ -455,7 +455,7 @@ def cluster():
        	 	kmFeatures = model.transform(df).select("features", "prediction")
 		
 		###Evaluation
-		rows = transformed.collect()
+		rows = kmFeatures.collect()
 		WSSSE = 0
 		for i in rows:
     			WSSSE += sqrt(sum([x**2 for x in (model.clusterCenters()[i[1]]-i[0])]))
