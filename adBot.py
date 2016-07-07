@@ -371,14 +371,14 @@ def reduce():
 		sc = SparkContext(conf=conf)
 		sqlContext = SQLContext(sc)
 		lines = sc.textFile(input_file).map(lambda x:x.split(" "))
-		lines = lines.map(lambda x:[float(y) for y in x])
-		df = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
+		lines = lines.map(lambda x:(x[0],[float(y) for y in x[1:]]))
+		df = lines.map(lambda x: Row(labels=x[0],features=Vectors.dense(x[1]))).toDF()
 
 		###with ml
 		pca = PCA(k=int(reduced_n),inputCol="features", outputCol="pca_features")
 		model = pca.fit(df)
 		outData = model.transform(df)
-		pcaFeatures = model.transform(df).select("pca_features")
+		pcaFeatures = model.transform(df).select("labels","pca_features")
 
 		###Write out
 		pcaFeatures.rdd.repartition(1).saveAsTextFile(output_path + "/reducedFeatures")
@@ -388,7 +388,8 @@ def reduce():
 		for line in inputfile:
         		x = line.split("[")[1].split("]")[0]
         		x = re.sub(',','',x)
-        		outputfile.write(x+'\n')
+        		y = line.split("'")[1]
+			outputfile.write(y + " " + x + '\n')
 		inputfile.close()
 		outputfile.close()	
 
@@ -446,11 +447,11 @@ def cluster():
 		sc = SparkContext(conf=conf)
 		sqlContext = SQLContext(sc)
 		lines = sc.textFile(input_file).map(lambda x:x.split(" "))
-		lines = lines.map(lambda x:[float(y) for y in x])
-		df = lines.map(lambda x: Row(features=Vectors.dense(x))).toDF()
+		lines = lines.map(lambda x:(x[0],[float(y) for y in x[1:]]))
+		df = lines.map(lambda x: Row(labels=x[0],features=Vectors.dense(x[1]))).toDF()
 		pdf = df.toPandas()
 		###with ml
-		kmeans = KMeans(k=10, seed=1,initSteps=5, tol=1e-4, maxIter=20, initMode="k-means||", featuresCol="features")
+		kmeans = KMeans(k=2, seed=1,initSteps=5, tol=1e-4, maxIter=20, initMode="k-means||", featuresCol="features")
         	model = kmeans.fit(df)
        	 	kmFeatures = model.transform(df).select("features", "prediction")
 		
