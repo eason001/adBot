@@ -10,7 +10,10 @@ import matplotlib.pyplot as plt
 from skimage.exposure import rescale_intensity
 from scipy import ndimage as ndi
 import math
-
+from skimage.filters import gaussian
+from skimage.segmentation import active_contour
+from scipy import misc
+from skimage.morphology import skeletonize
 
 path = "/Users/yircheng/Documents/Yi/ad_proj/data/img/"
 out_path = "/Users/yircheng/Documents/Yi/ad_proj/out/"
@@ -20,8 +23,16 @@ def as_gray(image_filter, image, *args, **kwargs):
     return image_filter(gray_image, *args, **kwargs)
 
 @adapt_rgb(as_gray)
-def canny_gray(image):
-    return feature.canny(image)
+def original_gray(image):
+    return image
+
+@adapt_rgb(as_gray)
+def skeleton_gray(image):
+    return skeletonize(image)
+
+@adapt_rgb(as_gray)
+def canny_gray(image,p):
+    return feature.canny(image,sigma=p)
 
 @adapt_rgb(as_gray)
 def canny_gray2(image):
@@ -30,6 +41,10 @@ def canny_gray2(image):
 @adapt_rgb(as_gray)
 def sobel_gray(image):
     return filters.sobel(image)
+
+@adapt_rgb(as_gray)
+def roberts_gray(image):
+    return filters.roberts(image)
 
 @adapt_rgb(each_channel)
 def sobel_each(image):
@@ -249,9 +264,20 @@ def contour():
 
 def togray():
 
-        im = Image.open(path + 'bibme0.png')
-        gray_im = rgb2gray(np.array(im))
-        toprint(gray_im,"gray_testim.png")
+	im = Image.open(path + 'bibme0.png')
+	gray_im = rgb2gray(np.array(im))
+	toprint(gray_im,"gray_testim.png")
+
+def test():
+
+	im = Image.open(path + 'bibme0.png')
+	misc.imsave('sample_original.png',im) # uses the Image module (PIL)
+#	misc.imsave('sample_skeleton.png',1-skeleton_gray(np.array(im))) # uses the Image module (PIL)
+
+#	import matplotlib.pyplot as plt
+#	plt.imshow(im)
+#	plt.show()
+
 
 if __name__=="__main__":
 #	edge()
@@ -259,4 +285,5 @@ if __name__=="__main__":
 #	reduce()
 #	skeleton()
 #	contour()
-	togray()
+#	togray()
+	test()
