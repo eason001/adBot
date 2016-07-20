@@ -392,7 +392,7 @@ def reduce():
 			outputfile.write(y + " " + x + '\n')
 		inputfile.close()
 		outputfile.close()	
-
+		sc.stop()
 		print "Dimension reduction finished!"
 		main()
 	
@@ -473,7 +473,7 @@ def cluster():
         		outputfile.write(x+'\n')
 		inputfile.close()
 		outputfile.close()	
-
+		sc.stop()
 		print "Data Clustering finished!"
 		main()
 	
