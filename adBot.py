@@ -483,6 +483,37 @@ def cluster():
 	print "invalid option"
 	main()
 	
+def extract():
+    input_path = raw_input("Enter input data path (absolute path required): ")
+    if not os.path.isdir(input_path):
+	print "Directory path is invalid."
+	main()
+    output = open(input_path + "/extracted_features",'w')
+    src_path = input_path + "/src"
+    img_path = input_path + "/img"
+    output.write("file_name ads_pattern external_links \n")
+    for file in os.listdir(src_path):
+	txt_file = open(src_path + "/" + file,'r')
+        ad_count = 0
+        ex_count = 0
+        domain = file.split(".")[0].rstrip('1234567890')
+        for line in txt_file:
+                ad_count += len(re.findall("_ad_|_ads_|-ad-|-ads-", line))
+                link = line.split("href=\"http://www.")
+                for i in range(len(link)):
+                        if i!=0 and not link[i].startswith(domain):
+                                ex_count += 1
+
+                links = line.split("href=\"https://www.")
+                for i in range(len(links)):
+                        if i!=0 and not links[i].startswith(domain):
+                                ex_count += 1
+
+        print file + " has " + str(ad_count) + " ads   " + str(ex_count) + " links"
+	output.write(file.split(".")[0] + " " + str(ad_count) + " " + str(ex_count) + "\n")
+	txt_file.close()
+    output.close()
+    main()
 
 def Choose(x):
     unused_var = os.system("clear")
@@ -501,6 +532,9 @@ def Choose(x):
 
     elif x == '5':
 	cluster()
+
+    elif x == '6':
+	extract()
 
     elif x == 'a':
 	aws()
@@ -521,6 +555,7 @@ def main():
 		print "3 - 3C Steps (Cutting -> Compressing -> Converting)"
 		print "4 - Dimension Reduction"
 		print "5 - Clustering"
+		print "6 - Feature Extraction"
 		print "a - Transfering data with AWS S3"
 		print "0 - Exit"
 		user_input = raw_input("Choose option: ")	
