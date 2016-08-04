@@ -13,6 +13,43 @@ import tempfile
 import itertools as IT
 import os
 import re
+from skimage.color.adapt_rgb import adapt_rgb, each_channel, hsv_value
+from PIL import Image
+from skimage import filters
+from skimage.color import rgb2gray
+from skimage import feature
+from skimage import io
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage.exposure import rescale_intensity
+from scipy import ndimage as ndi
+import math
+from skimage.morphology import skeletonize
+
+def as_gray(image_filter, image, *args, **kwargs):
+    gray_image = rgb2gray(image)
+    return image_filter(gray_image, *args, **kwargs)
+
+@adapt_rgb(as_gray)
+def original_gray(image):
+    return image
+
+@adapt_rgb(as_gray)
+def skeleton_gray(image):
+    return skeletonize(image)
+
+@adapt_rgb(as_gray)
+def canny_gray(image,p):
+    return feature.canny(image,sigma=p)
+
+@adapt_rgb(as_gray)
+def sobel_gray(image):
+    return filters.sobel(image)
+
+@adapt_rgb(as_gray)
+def roberts_gray(image):
+    return filters.roberts(image)
+
 		
 def scrape(n,l,root,file_array,timeout):
     from selenium import webdriver
@@ -231,6 +268,7 @@ def compress():
 	compress_path = raw_input("Enter an image path to compress: ")
 	cutfile_path = raw_input("Enter a path for output text file: ")
 	gray_flag = raw_input("Compress it in Grayscale (Y/N): ")	
+        filter = raw_input("Input a filter (default: grayscale): ")
 
 	if gray_flag == '':
 		gray_flag = 'N'
@@ -254,13 +292,38 @@ def compress():
 	L_box = (1, 350, 350, 1000)
 	R_box = (1050, 350, 1400, 1000)
 
+        canny_sigma = 1
 	counter = 0
 	max_count = 4
+	i = 0
+	n_files = 0
+
+        for file in os.listdir(compress_path):
+                if file.lower().endswith(('.png','.jpg','.jpeg','.gif')):
+                        n_files += 1
+
 	for file in os.listdir(compress_path):
-		
-		print("compressing..." + file)
+	    if file.lower().endswith(('.png','.jpg','.jpeg','.gif')):		
+                i += 1
+                print("compressing..." + file + ' ' +  str(i) + '/' + str(n_files))
         	im = Image.open(compress_path + "/" + file)
         	cutfile.write(file.split(".")[0])
+        ######Filters####
+                if filter == 'grayscale':
+                        im = original_gray(np.array(im))
+                        im = Image.fromarray(np.uint8(im*255))
+                if filter == 'sobel':
+                        im = 1-sobel_gray(np.array(im))
+                        im = Image.fromarray(np.uint8(im*255))
+                if filter == 'roberts':
+                        im = 1-roberts_gray(np.array(im))
+                        im = Image.fromarray(np.uint8(im*255))
+                if filter == 'canny':
+                        im = 1-canny_gray(np.array(im),canny_sigma)
+                        im = Image.fromarray(np.uint8(im*255))
+                if filter == 'skeleton':
+                        im = 1-skeleton_gray(np.array(im))
+                        im = Image.fromarray(np.uint8(im*255))
 
 	######TOP REGION######
         	region = im.crop(T_box)
