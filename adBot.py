@@ -613,7 +613,7 @@ def main():
 	while True:
 		print "Welcome to adBot v 1.3.1"
 		print "please choose one of the follow options:"
-		print "1 - Scraing data (input file: ./urls.txt)"
+		print "1 - Scraping data (input file: ./urls.txt)"
 		print "2 - Cleaning data"
 		print "3 - 3C Steps (Cutting -> Compressing -> Converting)"
 		print "4 - Dimension Reduction"
